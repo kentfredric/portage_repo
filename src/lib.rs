@@ -10,6 +10,7 @@ use std::path::PathBuf;
 
 pub mod err;
 pub mod file;
+use crate::{err::ErrorKind, file::RepoName};
 
 /// Represents a gentoo repository
 #[cfg_attr(feature = "external_doc", doc(include = "struct.Repository.md"))]
@@ -29,4 +30,10 @@ impl Repository {
 
     /// Returns the path to this repository
     pub fn path(&self) -> PathBuf { self.root.to_owned() }
+
+    /// Extract this repositories name from its profiles dir
+    pub fn name(&self) -> Result<String, ErrorKind> {
+        let r = RepoName::new(self.root.join("profiles/repo_name"));
+        r.get()
+    }
 }

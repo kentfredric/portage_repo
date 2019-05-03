@@ -13,10 +13,14 @@ readme = "src/lib.md"
 
 [dependencies]
 
+[dev-dependencies.display_attr]
+version = "~0.1"
+
 [features]
 default  = []
-nightly = ["external_doc"]
+nightly = ["external_doc", "non_exhaustive"]
 external_doc = []
+non_exhaustive = []
 
 [package.metadata.docs.rs]
 features = [ "nightly" ]

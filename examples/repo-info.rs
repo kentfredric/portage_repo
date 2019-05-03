@@ -5,7 +5,7 @@
 //! cargo run --release --example repo-info PATH
 //! ```
 
-use portage_repo::Repository;
+use portage_repo::{err::ErrorKind, Repository};
 use std::env;
 
 fn main() {
@@ -14,4 +14,9 @@ fn main() {
     let r = Repository::new(first);
     println!("{:?}", r);
     println!("path: {:?}", r.path());
+    println!("name: {:}", match r.name() {
+        Ok(s) => s.to_string(),
+        Err(e @ ErrorKind::PathNotFound(..)) => format!("<unknown> ({})", e),
+        Err(e) => panic!("{:?}", e),
+    });
 }

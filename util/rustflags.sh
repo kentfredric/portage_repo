@@ -49,6 +49,7 @@ if [[ "${STABLE:-0}" == 0 ]]; then
   "-Z" "unstable-options"
   "--disable-minification"
   "--enable-index-page"
+  "--extern-html-root-url" "display_attr=https://docs.rs/display_attr/0.1.1"
   )
 fi
 

@@ -4,6 +4,7 @@ initSidebarItems({
   , ["file", "Utilities for decoding various portage file formats"]
  ]
  , "struct": [
-  ["Repository", "Represents a gentoo repository"]
+  ["Category", "Represents a concrete Gentoo category"]
+  , ["Repository", "Represents a gentoo repository"]
  ]
 });

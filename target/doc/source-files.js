@@ -1,5 +1,9 @@
 var N = null;
 var sourcesIndex = {};
+sourcesIndex["category_info"] = {
+ "name": ""
+ , "files": ["category-info.rs"]
+};
 sourcesIndex["portage_repo"] = {
  "name": ""
  , "files": ["err.rs", "file.rs", "lib.rs"]

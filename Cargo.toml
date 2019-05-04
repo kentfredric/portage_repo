@@ -38,3 +38,7 @@ doc = true
 [[example]]
 name = "repo-info"
 doc = true
+
+[[example]]
+name = "category-info"
+doc = true

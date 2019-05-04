@@ -6,7 +6,7 @@
     doc = "A low-level interface for working with Gentoo portage \
            repositories."
 )]
-use std::path::PathBuf;
+use std::{borrow::Cow, path::PathBuf};
 
 pub mod err;
 pub mod file;
@@ -47,4 +47,27 @@ impl From<Repository> for PathBuf {
 }
 impl From<&Repository> for PathBuf {
     fn from(other: &Repository) -> Self { other.root.to_owned() }
+}
+
+/// Represents a concrete Gentoo category
+#[cfg_attr(feature = "external_doc", doc(include = "struct.Category.md"))]
+#[derive(Debug, Clone, Eq, PartialEq, Ord, PartialOrd, Hash)]
+pub struct Category {
+    root:     PathBuf,
+    category: String,
+    path:     PathBuf,
+}
+
+impl Category {
+    /// Construct a new [`Category`] explicitly
+    pub fn new<'a, P, S>(root: P, category: S) -> Self
+    where
+        P: Into<PathBuf>,
+        S: Into<Cow<'a, str>>,
+    {
+        let r = root.into();
+        let c = category.into().into_owned();
+        let path = r.join(&c);
+        Self { root: r, category: c, path }
+    }
 }

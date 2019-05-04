@@ -36,7 +36,10 @@ if [[ "${STABLE:-0}" == 0 ]]; then
   "-W" "deprecated-in-future"
   "-W" "private-doc-tests"
   "-W" "rustdoc"
-  "-W" "single-use-lifetimes"
+# Currently false-positives
+# https://github.com/rust-lang/rust/issues/60554
+#  "-W" "single-use-lifetimes"
+
 # external doc is unstable :(
 #"-W" "unstable-features"
   )

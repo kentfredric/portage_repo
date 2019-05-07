@@ -93,6 +93,12 @@ searchIndex["portage_repo"] = {
    ]
    , ["self"]
   ]]
+  , [11, "path", "", "Return the path to a gentoo package", 5, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
+  ]]
   , [11, "to_owned", "", "", 3, [
    [
     ["self"]
@@ -423,15 +429,15 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "eq", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
@@ -513,8 +519,8 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "partial_cmp", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , [
     ["ordering"]
@@ -523,29 +529,29 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
@@ -565,8 +571,8 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "cmp", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["ordering"]
   ]]

@@ -20,4 +20,5 @@ fn main() {
         pack.into_string().expect("package: Did not decode as unicode"),
     );
     println!("{:?}", c);
+    println!("path: {:?}", c.path());
 }

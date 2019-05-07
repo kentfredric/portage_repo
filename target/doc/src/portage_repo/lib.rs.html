@@ -190,6 +190,9 @@
 <span id="114">114</span>
 <span id="115">115</span>
 <span id="116">116</span>
+<span id="117">117</span>
+<span id="118">118</span>
+<span id="119">119</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
@@ -339,6 +342,10 @@
         <span class="self">Self</span> { <span class="ident">root</span>: <span class="ident">r</span>, <span class="ident">category</span>: <span class="ident">c</span>, <span class="ident">package</span>: <span class=
 "ident">p</span>, <span class="ident">path</span> }
     }
+
+    <span class="doccomment">/// Return the path to a gentoo package</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">path</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">PathBuf</span> { <span class=
+"self">self</span>.<span class="ident">path</span>.<span class="ident">to_owned</span>() }
 }
 </pre>
   </div>

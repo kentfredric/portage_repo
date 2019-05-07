@@ -97,6 +97,7 @@
 <span id="21">21</span>
 <span id="22">22</span>
 <span id="23">23</span>
+<span id="24">24</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
@@ -126,6 +127,7 @@
         <span class="ident">pack</span>.<span class="ident">into_string</span>().<span class="ident">expect</span>(<span class="string">&quot;package: Did not decode as unicode&quot;</span>),
     );
     <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;{:?}&quot;</span>, <span class="ident">c</span>);
+    <span class="macro">println</span><span class="macro">!</span>(<span class="string">&quot;path: {:?}&quot;</span>, <span class="ident">c</span>.<span class="ident">path</span>());
 }
 </pre>
   </div>

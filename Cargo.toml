@@ -46,3 +46,7 @@ doc = true
 [[example]]
 name = "package-info"
 doc = true
+
+[[example]]
+name = "ebuild-info"
+doc = true

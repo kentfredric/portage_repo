@@ -48,7 +48,7 @@
     <a class="sidebar-title"
          href="#methods">Methods</a>
     <div class="sidebar-links">
-     <a href="#method.new">new</a><a href="#method.path">path</a>
+     <a href="#method.name">name</a><a href="#method.new">new</a><a href="#method.path">path</a>
     </div><a class="sidebar-title"
          href="#implementations">Trait Implementations</a>
     <div class="sidebar-links">
@@ -120,7 +120,8 @@
 <span class="kw">let</span> <span class="ident">c</span> <span class="op">=</span> <span class="ident">Category</span>::<span class="ident">new</span>(<span class="string">&quot;/usr/portage&quot;</span>, <span class=
 "string">&quot;dev-perl&quot;</span>);
 <span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">c</span>.<span class="ident">path</span>(), <span class="ident">Path</span>::<span class="ident">new</span>(<span class=
-"string">&quot;/usr/portage/dev-perl&quot;</span>));</pre>
+"string">&quot;/usr/portage/dev-perl&quot;</span>));
+<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">c</span>.<span class="ident">name</span>(), <span class="string">&quot;dev-perl&quot;</span>);</pre>
    </div>
    <h1 id="construction"
        class="section-header"><a href="#construction">Construction</a></h1>
@@ -178,7 +179,7 @@
      href="../portage_repo/struct.Category.html"
      title="struct portage_repo::Category">Category</a></code><a href='#impl'
      class='anchor'></a><a class='srclink'
-     href='../src/portage_repo/lib.rs.html#61-76'
+     href='../src/portage_repo/lib.rs.html#61-79'
      title='goto source code'>[src]</a></h3>
   <div class='impl-items'>
    <h4 id='method.new'
@@ -210,6 +211,16 @@
       title='goto source code'>[src]</a></h4>
    <div class='docblock'>
     <p>Returns the path to this repository</p>
+   </div>
+   <h4 id='method.name'
+       class="method"><code id='name.v'>pub fn <a href='#method.name'
+      class='fnname'>name</a>(&amp;self) -&gt; <a class="struct"
+      href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html"
+      title="struct alloc::string::String">String</a></code><a class='srclink'
+      href='../src/portage_repo/lib.rs.html#78'
+      title='goto source code'>[src]</a></h4>
+   <div class='docblock'>
+    <p>Return the name of the category</p>
    </div>
   </div>
   <h2 id='implementations'

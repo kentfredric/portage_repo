@@ -73,6 +73,12 @@ searchIndex["portage_repo"] = {
    ]
    , ["pathbuf"]
   ]]
+  , [11, "name", "", "Return the name of the category", 4, [
+   [
+    ["self"]
+   ]
+   , ["string"]
+  ]]
   , [11, "to_owned", "", "", 3, [
    [
     ["self"]

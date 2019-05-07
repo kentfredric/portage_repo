@@ -34,8 +34,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["errorkind"]
     , ["result", ["string", "errorkind"]]
+    , ["errorkind"]
    ]
   ]]
   , [11, "new", "portage_repo", "Construct a new Repository trait object", 3, [
@@ -56,8 +56,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["errorkind"]
     , ["result", ["string", "errorkind"]]
+    , ["errorkind"]
    ]
   ]]
   , [11, "new", "", "Construct a new [`Category`] explicitly", 4, [
@@ -66,6 +66,12 @@ searchIndex["portage_repo"] = {
     , ["p"]
    ]
    , ["self"]
+  ]]
+  , [11, "path", "", "Returns the path to this repository", 4, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
   ]]
   , [11, "to_owned", "", "", 3, [
    [

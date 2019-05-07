@@ -18,4 +18,5 @@ fn main() {
         cate.into_string().expect("Did not decode as unicode"),
     );
     println!("{:?}", c);
+    println!("path: {:?}", c.path());
 }

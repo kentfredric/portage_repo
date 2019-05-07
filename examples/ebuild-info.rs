@@ -22,4 +22,5 @@ fn main() {
         ebui.into_string().expect("ebuild: Did not decode as unicode"),
     );
     println!("{:?}", c);
+    println!("path: {:?}", c.path());
 }

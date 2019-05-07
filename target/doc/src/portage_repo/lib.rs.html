@@ -193,6 +193,11 @@
 <span id="117">117</span>
 <span id="118">118</span>
 <span id="119">119</span>
+<span id="120">120</span>
+<span id="121">121</span>
+<span id="122">122</span>
+<span id="123">123</span>
+<span id="124">124</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
@@ -346,6 +351,12 @@
     <span class="doccomment">/// Return the path to a gentoo package</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">path</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">PathBuf</span> { <span class=
 "self">self</span>.<span class="ident">path</span>.<span class="ident">to_owned</span>() }
+
+    <span class="doccomment">/// Get the full name of this package</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">name</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">String</span> {
+        <span class="self">self</span>.<span class="ident">category</span>.<span class="ident">to_owned</span>() <span class="op">+</span> <span class="string">&quot;/&quot;</span> <span class="op">+</span> <span class=
+"kw-2">&amp;</span><span class="self">self</span>.<span class="ident">package</span>
+    }
 }
 </pre>
   </div>

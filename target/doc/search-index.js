@@ -39,8 +39,8 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , [
-    ["string"]
-    , ["result", ["string", "errorkind"]]
+    ["result", ["string", "errorkind"]]
+    , ["string"]
     , ["errorkind"]
    ]
   ]]
@@ -61,8 +61,8 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , [
-    ["string"]
-    , ["result", ["string", "errorkind"]]
+    ["result", ["string", "errorkind"]]
+    , ["string"]
     , ["errorkind"]
    ]
   ]]
@@ -98,6 +98,12 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , ["pathbuf"]
+  ]]
+  , [11, "name", "", "Get the full name of this package", 5, [
+   [
+    ["self"]
+   ]
+   , ["string"]
   ]]
   , [11, "to_owned", "", "", 3, [
    [

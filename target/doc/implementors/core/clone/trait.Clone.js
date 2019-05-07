@@ -16,6 +16,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"portage_repo/struct.Category.html\" title=\"struct portage_repo::Category\">Category</a>"
   , synthetic: false
   , types: ["portage_repo::Category"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"portage_repo/struct.Package.html\" title=\"struct portage_repo::Package\">Package</a>"
+  , synthetic: false
+  , types: ["portage_repo::Package"]
  }, ];
 
  if (window.register_implementors) {

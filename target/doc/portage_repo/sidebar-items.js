@@ -5,6 +5,7 @@ initSidebarItems({
  ]
  , "struct": [
   ["Category", "Represents a concrete Gentoo category"]
+  , ["Package", "Represents a discrete gentoo package"]
   , ["Repository", "Represents a gentoo repository"]
  ]
 });

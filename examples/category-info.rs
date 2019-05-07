@@ -19,4 +19,5 @@ fn main() {
     );
     println!("{:?}", c);
     println!("path: {:?}", c.path());
+    println!("name: {:?}", c.name());
 }

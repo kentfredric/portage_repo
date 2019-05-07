@@ -10,4 +10,5 @@ let r = Repository::new("/usr/portage");
 let c = Category::new("/usr/portage", "dev-perl");
 assert_eq!(r.path(), Path::new("/usr/portage"));
 assert_eq!(c.path(), Path::new("/usr/portage/dev-perl"));
+assert_eq!(c.name(), "dev-perl");
 ```

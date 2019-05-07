@@ -88,3 +88,29 @@ impl From<Category> for PathBuf {
 impl From<&Category> for PathBuf {
     fn from(other: &Category) -> Self { other.path.to_owned() }
 }
+
+/// Represents a discrete gentoo package
+#[cfg_attr(feature = "external_doc", doc(include = "struct.Package.md"))]
+#[derive(Debug, Clone, Eq, PartialEq, Ord, PartialOrd, Hash)]
+pub struct Package {
+    root:     PathBuf,
+    category: String,
+    package:  String,
+    path:     PathBuf,
+}
+
+impl Package {
+    /// Construct a new Package Type Object
+    pub fn new<'a, P, S, SS>(root: P, category: S, package: SS) -> Self
+    where
+        P: Into<PathBuf>,
+        S: Into<Cow<'a, str>>,
+        SS: Into<Cow<'a, str>>,
+    {
+        let r = root.into();
+        let c = category.into().into_owned();
+        let p = package.into().into_owned();
+        let path = r.join(&c).join(&p);
+        Self { root: r, category: c, package: p, path }
+    }
+}

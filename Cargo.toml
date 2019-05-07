@@ -42,3 +42,7 @@ doc = true
 [[example]]
 name = "category-info"
 doc = true
+
+[[example]]
+name = "package-info"
+doc = true

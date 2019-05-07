@@ -174,3 +174,15 @@ mod category {
         }
     }
 }
+
+mod package {
+    use crate::util::repos;
+    use portage_repo::Package;
+
+    #[test]
+    fn new() {
+        let test_root = repos("basic").unwrap();
+        let _r = Package::new(&test_root, "dev-perl", "example");
+    }
+
+}

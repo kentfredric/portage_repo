@@ -27,9 +27,9 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , [
-    ["string"]
+    ["result", ["string", "errorkind"]]
+    , ["string"]
     , ["errorkind"]
-    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "new", "portage_repo", "Construct a new Repository trait object", 3, [
@@ -49,9 +49,9 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , [
-    ["string"]
+    ["result", ["string", "errorkind"]]
+    , ["string"]
     , ["errorkind"]
-    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "to_owned", "", "", 3, [
@@ -256,22 +256,22 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "eq", "portage_repo", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "partial_cmp", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , [
     ["ordering"]
@@ -280,38 +280,44 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "cmp", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["ordering"]
+  ]]
+  , [11, "as_ref", "", "", 3, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
   ]]
   , [11, "clone", "portage_repo::err", "", 0, [
    [

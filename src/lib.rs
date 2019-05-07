@@ -37,3 +37,7 @@ impl Repository {
         r.get()
     }
 }
+
+impl AsRef<PathBuf> for Repository {
+    fn as_ref(&self) -> &PathBuf { &self.root }
+}

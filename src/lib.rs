@@ -163,4 +163,7 @@ impl Ebuild {
         let path = r.join(&c).join(&p).join(&e);
         Self { root: r, category: c, package: p, ebuild: e, path }
     }
+
+    /// Returns a path to the ebuild file
+    pub fn path(&self) -> PathBuf { self.path.to_owned() }
 }

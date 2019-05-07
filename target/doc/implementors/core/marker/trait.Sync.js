@@ -13,6 +13,10 @@
   , synthetic: true
   , types: ["portage_repo::Package"]
  }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"struct\" href=\"portage_repo/struct.Ebuild.html\" title=\"struct portage_repo::Ebuild\">Ebuild</a>"
+  , synthetic: true
+  , types: ["portage_repo::Ebuild"]
+ }, {
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"enum\" href=\"portage_repo/err/enum.ErrorSource.html\" title=\"enum portage_repo::err::ErrorSource\">ErrorSource</a>"
   , synthetic: true
   , types: ["portage_repo::err::ErrorSource"]

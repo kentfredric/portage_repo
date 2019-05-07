@@ -12,6 +12,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"struct\" href=\"portage_repo/struct.Package.html\" title=\"struct portage_repo::Package\">Package</a>"
   , synthetic: false
   , types: ["portage_repo::Package"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html\" title=\"trait core::cmp::Eq\">Eq</a> for <a class=\"struct\" href=\"portage_repo/struct.Ebuild.html\" title=\"struct portage_repo::Ebuild\">Ebuild</a>"
+  , synthetic: false
+  , types: ["portage_repo::Ebuild"]
  }, ];
 
  if (window.register_implementors) {

@@ -4,6 +4,10 @@ sourcesIndex["category_info"] = {
  "name": ""
  , "files": ["category-info.rs"]
 };
+sourcesIndex["ebuild_info"] = {
+ "name": ""
+ , "files": ["ebuild-info.rs"]
+};
 sourcesIndex["package_info"] = {
  "name": ""
  , "files": ["package-info.rs"]

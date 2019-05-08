@@ -730,6 +730,12 @@ searchIndex["portage_repo"] = {
    ]
    , ["pathbuf"]
   ]]
+  , [11, "as_ref", "", "", 6, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
+  ]]
   , [11, "clone", "portage_repo::err", "", 0, [
    [
     ["self"]

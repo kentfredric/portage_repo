@@ -122,3 +122,7 @@ impl Package {
         self.category.to_owned() + "/" + &self.package
     }
 }
+
+impl AsRef<PathBuf> for Package {
+    fn as_ref(&self) -> &PathBuf { &self.path }
+}

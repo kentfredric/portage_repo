@@ -39,8 +39,8 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , [
-    ["result", ["string", "errorkind"]]
-    , ["string"]
+    ["string"]
+    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
    ]
   ]]
@@ -61,8 +61,8 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , [
-    ["result", ["string", "errorkind"]]
-    , ["string"]
+    ["string"]
+    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
    ]
   ]]
@@ -421,29 +421,29 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "eq", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "eq", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
@@ -487,8 +487,8 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "partial_cmp", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , [
     ["ordering"]
@@ -497,36 +497,36 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "partial_cmp", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , [
     ["ordering"]
@@ -535,29 +535,29 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
@@ -570,15 +570,15 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "cmp", "", "", 4, [
    [
-    ["self"]
-    , ["category"]
+    ["category"]
+    , ["self"]
    ]
    , ["ordering"]
   ]]
   , [11, "cmp", "", "", 5, [
    [
-    ["self"]
-    , ["package"]
+    ["package"]
+    , ["self"]
    ]
    , ["ordering"]
   ]]
@@ -589,6 +589,12 @@ searchIndex["portage_repo"] = {
    , ["pathbuf"]
   ]]
   , [11, "as_ref", "", "", 4, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
+  ]]
+  , [11, "as_ref", "", "", 5, [
    [
     ["self"]
    ]

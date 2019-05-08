@@ -40,8 +40,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
+    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "new", "portage_repo", "Construct a new Repository trait object", 3, [
@@ -62,8 +62,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
+    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "new", "", "Construct a new [`Category`] explicitly", 4, [
@@ -421,29 +421,29 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "eq", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "eq", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
@@ -487,8 +487,8 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "partial_cmp", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , [
     ["ordering"]
@@ -497,36 +497,36 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "partial_cmp", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , [
     ["ordering"]
@@ -535,29 +535,29 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["bool"]
   ]]
@@ -570,15 +570,15 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "cmp", "", "", 4, [
    [
-    ["category"]
-    , ["self"]
+    ["self"]
+    , ["category"]
    ]
    , ["ordering"]
   ]]
   , [11, "cmp", "", "", 5, [
    [
-    ["package"]
-    , ["self"]
+    ["self"]
+    , ["package"]
    ]
    , ["ordering"]
   ]]

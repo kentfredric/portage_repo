@@ -77,3 +77,7 @@ impl Category {
     /// Return the name of the category
     pub fn name(&self) -> String { self.category.to_owned() }
 }
+
+impl AsRef<PathBuf> for Category {
+    fn as_ref(&self) -> &PathBuf { &self.path }
+}

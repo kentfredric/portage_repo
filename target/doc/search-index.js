@@ -46,8 +46,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
+    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "new", "portage_repo", "Construct a new Repository trait object", 3, [
@@ -68,8 +68,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
+    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "new", "", "Construct a new [`Category`] explicitly", 4, [

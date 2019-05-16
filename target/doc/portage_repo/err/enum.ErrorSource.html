@@ -48,7 +48,7 @@
     <a class="sidebar-title"
          href="#variants">Variants</a>
     <div class="sidebar-links">
-     <a href="#variant.RepoName">RepoName</a><a href="#variant.CommentedFileReader">CommentedFileReader</a>
+     <a href="#variant.CategoryFileIterator">CategoryFileIterator</a><a href="#variant.RepoName">RepoName</a><a href="#variant.CommentedFileReader">CommentedFileReader</a>
     </div><a class="sidebar-title"
          href="#implementations">Trait Implementations</a>
     <div class="sidebar-links">
@@ -106,12 +106,16 @@
   <h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs"
      href="javascript:void(0)"
      title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink'
-     href='../../src/portage_repo/err.rs.html#9-16'
+     href='../../src/portage_repo/err.rs.html#9-19'
      title='goto source code'>[src]</a></span><span class='in-band'>Enum <a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>err</a>::<wbr><a class="enum"
      href=''>ErrorSource</a></span></h1>
   <div class="docblock type-decl hidden-by-usual-hider">
    <pre class='rust enum'><span class="docblock attributes top-attr">#[non_exhaustive]
 </span>pub enum ErrorSource {
+    CategoryFileIterator(&amp;'static <a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
     RepoName(&amp;'static <a class="primitive"
      href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
      href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
@@ -130,6 +134,14 @@
      class='anchor'></a></h2>
   <div class='docblock non-exhaustive non-exhaustive-enum'>
    Non-exhaustive enums could have additional variants added in future. Therefore, when matching against variants of non-exhaustive enums, an extra wildcard arm must be added to account for any future variants.
+  </div><span id="variant.CategoryFileIterator"
+           class="variant small-section-header"><a href="#variant.CategoryFileIterator"
+     class="anchor field"></a><code id='CategoryFileIterator.v'>CategoryFileIterator(&amp;'static <a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
+  <div class='docblock'>
+   <p>An error from a CategoryFileIterator</p>
   </div><span id="variant.RepoName"
            class="variant small-section-header"><a href="#variant.RepoName"
      class="anchor field"></a><code id='RepoName.v'>RepoName(&amp;'static <a class="primitive"

@@ -10,6 +10,7 @@ use std::{borrow::Cow, path::PathBuf};
 
 pub mod err;
 pub mod file;
+pub mod iter;
 use crate::{err::ErrorKind, file::RepoName};
 
 /// Represents a gentoo repository

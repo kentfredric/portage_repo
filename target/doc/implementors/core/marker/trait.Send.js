@@ -36,6 +36,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"struct\" href=\"portage_repo/file/struct.Categories.html\" title=\"struct portage_repo::file::Categories\">Categories</a>"
   , synthetic: true
   , types: ["portage_repo::file::Categories"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryFileIterator.html\" title=\"struct portage_repo::iter::CategoryFileIterator\">CategoryFileIterator</a>"
+  , synthetic: true
+  , types: ["portage_repo::iter::CategoryFileIterator"]
  }, ];
 
  if (window.register_implementors) {

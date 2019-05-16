@@ -48,7 +48,8 @@
     <a class="sidebar-title"
          href="#variants">Variants</a>
     <div class="sidebar-links">
-     <a href="#variant.PathNotFound">PathNotFound</a><a href="#variant.PathAccessError">PathAccessError</a><a href="#variant.FileReadError">FileReadError</a><a href="#variant.FileDecodeError">FileDecodeError</a>
+     <a href="#variant.PathNotFound">PathNotFound</a><a href="#variant.PathAccessError">PathAccessError</a><a href="#variant.NotAFile">NotAFile</a><a href="#variant.FileReadError">FileReadError</a><a href=
+     "#variant.FileDecodeError">FileDecodeError</a>
     </div><a class="sidebar-title"
          href="#implementations">Trait Implementations</a>
     <div class="sidebar-links">
@@ -106,7 +107,7 @@
   <h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs"
      href="javascript:void(0)"
      title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink'
-     href='../../src/portage_repo/err.rs.html#21-34'
+     href='../../src/portage_repo/err.rs.html#24-40'
      title='goto source code'>[src]</a></span><span class='in-band'>Enum <a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>err</a>::<wbr><a class="enum"
      href=''>ErrorKind</a></span></h1>
   <div class="docblock type-decl hidden-by-usual-hider">
@@ -124,6 +125,11 @@
      title="struct std::path::PathBuf">PathBuf</a>,&nbsp;<a class="struct"
      href="https://doc.rust-lang.org/nightly/std/io/error/struct.Error.html"
      title="struct std::io::error::Error">Error</a>,&nbsp;<a class="enum"
+     href="../../portage_repo/err/enum.ErrorSource.html"
+     title="enum portage_repo::err::ErrorSource">ErrorSource</a>),
+    NotAFile(<a class="struct"
+     href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
+     title="struct std::path::PathBuf">PathBuf</a>,&nbsp;<a class="enum"
      href="../../portage_repo/err/enum.ErrorSource.html"
      title="enum portage_repo::err::ErrorSource">ErrorSource</a>),
     FileReadError(<a class="struct"
@@ -172,6 +178,15 @@
      title="enum portage_repo::err::ErrorSource">ErrorSource</a>)</code></span>
   <div class='docblock'>
    <p>A specified path generated IO errors during access</p>
+  </div><span id="variant.NotAFile"
+           class="variant small-section-header"><a href="#variant.NotAFile"
+     class="anchor field"></a><code id='NotAFile.v'>NotAFile(<a class="struct"
+     href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
+     title="struct std::path::PathBuf">PathBuf</a>,&nbsp;<a class="enum"
+     href="../../portage_repo/err/enum.ErrorSource.html"
+     title="enum portage_repo::err::ErrorSource">ErrorSource</a>)</code></span>
+  <div class='docblock'>
+   <p>A path was expected to be a file, but it was not</p>
   </div><span id="variant.FileReadError"
            class="variant small-section-header"><a href="#variant.FileReadError"
      class="anchor field"></a><code id='FileReadError.v'>FileReadError(<a class="struct"
@@ -206,7 +221,7 @@
       href="../../portage_repo/err/enum.ErrorKind.html"
       title="enum portage_repo::err::ErrorKind">ErrorKind</a></code><a href='#impl-Display'
       class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#19'
+      href='../../src/portage_repo/err.rs.html#22'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
     <h4 id='method.fmt'
@@ -216,7 +231,7 @@
        title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type"
        href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html"
        title="type core::fmt::Result">Result</a></code><a class='srclink'
-       href='../../src/portage_repo/err.rs.html#19'
+       href='../../src/portage_repo/err.rs.html#22'
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
@@ -229,7 +244,7 @@
       href="../../portage_repo/err/enum.ErrorKind.html"
       title="enum portage_repo::err::ErrorKind">ErrorKind</a></code><a href='#impl-Debug'
       class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#19'
+      href='../../src/portage_repo/err.rs.html#22'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
     <h4 id='method.fmt-1'
@@ -239,7 +254,7 @@
        title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type"
        href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html"
        title="type core::fmt::Result">Result</a></code><a class='srclink'
-       href='../../src/portage_repo/err.rs.html#19'
+       href='../../src/portage_repo/err.rs.html#22'
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
@@ -252,7 +267,7 @@
       href="../../portage_repo/err/enum.ErrorKind.html"
       title="enum portage_repo::err::ErrorKind">ErrorKind</a></code><a href='#impl-Error'
       class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#36'
+      href='../../src/portage_repo/err.rs.html#42'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
     <h4 id='method.description'

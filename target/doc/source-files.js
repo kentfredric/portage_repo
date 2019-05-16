@@ -14,7 +14,11 @@ sourcesIndex["package_info"] = {
 };
 sourcesIndex["portage_repo"] = {
  "name": ""
- , "files": ["err.rs", "file.rs", "lib.rs"]
+ , "files": ["err.rs", "file.rs", "iter.rs", "lib.rs"]
+};
+sourcesIndex["repo_categories_byfile"] = {
+ "name": ""
+ , "files": ["repo-categories-byfile.rs"]
 };
 sourcesIndex["repo_info"] = {
  "name": ""

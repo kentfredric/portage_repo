@@ -110,6 +110,12 @@
 <span id="34">34</span>
 <span id="35">35</span>
 <span id="36">36</span>
+<span id="37">37</span>
+<span id="38">38</span>
+<span id="39">39</span>
+<span id="40">40</span>
+<span id="41">41</span>
+<span id="42">42</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
@@ -122,6 +128,10 @@
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">DisplayAttr</span>, <span class="ident">Debug</span>, <span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;non_exhaustive&quot;</span>, <span class="ident">non_exhaustive</span>)]</span>
 <span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ErrorSource</span> {
+    <span class="doccomment">/// An error from a CategoryFileIterator</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via CategoryFileIterator in {} @ l{}:c{}&quot;</span>, <span class=
+"ident">_0</span>, <span class="ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">CategoryFileIterator</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
     <span class="doccomment">/// An error returned by a RepoName file decoder</span>
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via RepoName in {} @ l{}:c{}&quot;</span>, <span class="ident">_0</span>, <span class= 
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
@@ -144,6 +154,10 @@
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error accessing path {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class= 
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">PathAccessError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
+    <span class="doccomment">/// A path was expected to be a file, but it was not</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Path {:?} is not a file: {}&quot;</span>, <span class="ident">_0</span>, <span class=
+"ident">_1</span>)]</span>
+    <span class="ident">NotAFile</span>(<span class="ident">PathBuf</span>, <span class="ident">ErrorSource</span>),
     <span class="doccomment">/// An error occurred reading a file</span>
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error reading {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
 "ident">_1</span>, <span class="ident">_2</span>)]</span>

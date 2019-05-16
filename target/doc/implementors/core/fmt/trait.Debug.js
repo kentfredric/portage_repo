@@ -21,6 +21,10 @@
   , synthetic: false
   , types: ["portage_repo::file::Categories"]
  }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryFileIterator.html\" title=\"struct portage_repo::iter::CategoryFileIterator\">CategoryFileIterator</a>"
+  , synthetic: false
+  , types: ["portage_repo::iter::CategoryFileIterator"]
+ }, {
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"portage_repo/struct.Repository.html\" title=\"struct portage_repo::Repository\">Repository</a>"
   , synthetic: false
   , types: ["portage_repo::Repository"]

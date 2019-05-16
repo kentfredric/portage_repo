@@ -50,3 +50,7 @@ doc = true
 [[example]]
 name = "ebuild-info"
 doc = true
+
+[[example]]
+name = "repo-categories-byfile"
+doc = true

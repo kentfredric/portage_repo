@@ -1,7 +1,7 @@
 //! Various enums for representing Error states
 
 use display_attr::DisplayAttr;
-use std::{error, io, path::PathBuf};
+use std::{error, ffi, io, path::PathBuf};
 
 /// Metadata about origin of an error
 #[derive(DisplayAttr, Debug, Copy, Clone)]
@@ -10,12 +10,18 @@ pub enum ErrorSource {
     /// An error from a CategoryFileIterator
     #[display(fmt = "via CategoryFileIterator in {} @ l{}:c{}", _0, _1, _2)]
     CategoryFileIterator(&'static str, u32, u32),
-    /// An error returned by a RepoName file decoder
+    /// An error from a CategoryDirsIterator
+    #[display(fmt = "via CategoryDirsIterator in {} @ l{}:c{}", _0, _1, _2)]
+    CategoryDirsIterator(&'static str, u32, u32),
+    /// An error returned from a RepoName file decoder
     #[display(fmt = "via RepoName in {} @ l{}:c{}", _0, _1, _2)]
     RepoName(&'static str, u32, u32),
     /// An error returned from a CommentedFileReader decoder
     #[display(fmt = "via CommentedFileReader in {} @ l{}:c{}", _0, _1, _2)]
     CommentedFileReader(&'static str, u32, u32),
+    /// An error returned from CategoryMatcher
+    #[display(fmt = "via CategoryMatcher in {} @ l{}:c{}", _0, _1, _2)]
+    CategoryMatcher(&'static str, u32, u32),
 }
 
 /// Types of errors returned by this crate
@@ -37,6 +43,15 @@ pub enum ErrorKind {
     /// Errors occurred decoding file content
     #[display(fmt = "Error decoding {:?}: {} {}", _0, _1, _2)]
     FileDecodeError(PathBuf, io::Error, ErrorSource),
+    /// An error occurred invoking readdir()
+    #[display(fmt = "Readdir error on {:?}: {} {}", _0, _1, _2)]
+    ReadDirError(PathBuf, io::Error, ErrorSource),
+    /// A specified path lacked a filename component
+    #[display(fmt = "Path {:?} lacks basename component {}", _0, _1)]
+    PathLacksFileName(PathBuf, ErrorSource),
+    /// An entry name could not be decoded
+    #[display(fmt = "Name {:?} did not decode as Unicode {}", _0, _1)]
+    NameDecodeError(ffi::OsString, ErrorSource),
 }
 
 impl error::Error for ErrorKind {}

@@ -16,6 +16,10 @@ sourcesIndex["portage_repo"] = {
  "name": ""
  , "files": ["err.rs", "file.rs", "iter.rs", "lib.rs"]
 };
+sourcesIndex["repo_categories_bydiscover"] = {
+ "name": ""
+ , "files": ["repo-categories-bydiscover.rs"]
+};
 sourcesIndex["repo_categories_byfile"] = {
  "name": ""
  , "files": ["repo-categories-byfile.rs"]

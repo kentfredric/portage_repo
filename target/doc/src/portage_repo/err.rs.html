@@ -116,13 +116,28 @@
 <span id="40">40</span>
 <span id="41">41</span>
 <span id="42">42</span>
+<span id="43">43</span>
+<span id="44">44</span>
+<span id="45">45</span>
+<span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
 <span class="doccomment">//! Various enums for representing Error states</span>
 
 <span class="kw">use</span> <span class="ident">display_attr</span>::<span class="ident">DisplayAttr</span>;
-<span class="kw">use</span> <span class="ident">std</span>::{<span class="ident">error</span>, <span class="ident">io</span>, <span class="ident">path</span>::<span class="ident">PathBuf</span>};
+<span class="kw">use</span> <span class="ident">std</span>::{<span class="ident">error</span>, <span class="ident">ffi</span>, <span class="ident">io</span>, <span class="ident">path</span>::<span class="ident">PathBuf</span>};
 
 <span class="doccomment">/// Metadata about origin of an error</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">DisplayAttr</span>, <span class="ident">Debug</span>, <span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
@@ -132,7 +147,11 @@
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via CategoryFileIterator in {} @ l{}:c{}&quot;</span>, <span class=
 "ident">_0</span>, <span class="ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">CategoryFileIterator</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
-    <span class="doccomment">/// An error returned by a RepoName file decoder</span>
+    <span class="doccomment">/// An error from a CategoryDirsIterator</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via CategoryDirsIterator in {} @ l{}:c{}&quot;</span>, <span class=
+"ident">_0</span>, <span class="ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">CategoryDirsIterator</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
+    <span class="doccomment">/// An error returned from a RepoName file decoder</span>
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via RepoName in {} @ l{}:c{}&quot;</span>, <span class="ident">_0</span>, <span class= 
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">RepoName</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
@@ -140,6 +159,10 @@
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via CommentedFileReader in {} @ l{}:c{}&quot;</span>, <span class=
 "ident">_0</span>, <span class="ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">CommentedFileReader</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
+    <span class="doccomment">/// An error returned from CategoryMatcher</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via CategoryMatcher in {} @ l{}:c{}&quot;</span>, <span class=
+"ident">_0</span>, <span class="ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">CategoryMatcher</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
 }
 
 <span class="doccomment">/// Types of errors returned by this crate</span>
@@ -166,6 +189,18 @@
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error decoding {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">FileDecodeError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
+    <span class="doccomment">/// An error occurred invoking readdir()</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Readdir error on {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class= 
+"ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">ReadDirError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
+    <span class="doccomment">/// A specified path lacked a filename component</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Path {:?} lacks basename component {}&quot;</span>, <span class=
+"ident">_0</span>, <span class="ident">_1</span>)]</span>
+    <span class="ident">PathLacksFileName</span>(<span class="ident">PathBuf</span>, <span class="ident">ErrorSource</span>),
+    <span class="doccomment">/// An entry name could not be decoded</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Name {:?} did not decode as Unicode {}&quot;</span>, <span class=
+"ident">_0</span>, <span class="ident">_1</span>)]</span>
+    <span class="ident">NameDecodeError</span>(<span class="ident">ffi</span>::<span class="ident">OsString</span>, <span class="ident">ErrorSource</span>),
 }
 
 <span class="kw">impl</span> <span class="ident">error</span>::<span class="ident">Error</span> <span class="kw">for</span> <span class="ident">ErrorKind</span> {}

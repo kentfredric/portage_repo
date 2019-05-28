@@ -7,10 +7,10 @@
  <meta name="generator"
        content="rustdoc">
  <meta name="description"
-       content="API documentation for the Rust `ErrorSource` enum in crate `portage_repo`.">
+       content="API documentation for the Rust `CategoryMatcher` enum in crate `portage_repo`.">
  <meta name="keywords"
-       content="rust, rustlang, rust-lang, ErrorSource">
- <title>portage_repo::err::ErrorSource - Rust</title>
+       content="rust, rustlang, rust-lang, CategoryMatcher">
+ <title>portage_repo::iter::CategoryMatcher - Rust</title>
  <link rel="stylesheet"
        type="text/css"
        href="../../normalize.css">
@@ -42,18 +42,21 @@
   </div><a href='../../portage_repo/index.html'>
   <div class='logo-container'><img src='../../rust-logo.png'
        alt='logo'></div></a>
-  <p class='location'>Enum ErrorSource</p>
+  <p class='location'>Enum CategoryMatcher</p>
   <div class="sidebar-elems">
    <div class="block items">
     <a class="sidebar-title"
          href="#variants">Variants</a>
     <div class="sidebar-links">
-     <a href="#variant.CategoryFileIterator">CategoryFileIterator</a><a href="#variant.CategoryDirsIterator">CategoryDirsIterator</a><a href="#variant.RepoName">RepoName</a><a href=
-     "#variant.CommentedFileReader">CommentedFileReader</a><a href="#variant.CategoryMatcher">CategoryMatcher</a>
+     <a href="#variant.ExcludeBlackListed">ExcludeBlackListed</a><a href="#variant.RequireEbuild">RequireEbuild</a>
+    </div><a class="sidebar-title"
+         href="#methods">Methods</a>
+    <div class="sidebar-links">
+     <a href="#method.select">select</a>
     </div><a class="sidebar-title"
          href="#implementations">Trait Implementations</a>
     <div class="sidebar-links">
-     <a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a><a href="#impl-Display">Display</a>
+     <a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a>
     </div><a class="sidebar-title"
          href="#synthetic-implementations">Auto Trait Implementations</a>
     <div class="sidebar-links">
@@ -62,12 +65,12 @@
          href="#blanket-implementations">Blanket Implementations</a>
     <div class="sidebar-links">
      <a href="#impl-Any">Any</a><a href="#impl-Borrow%3CT%3E">Borrow&lt;T&gt;</a><a href="#impl-BorrowMut%3CT%3E">BorrowMut&lt;T&gt;</a><a href="#impl-From%3CT%3E">From&lt;T&gt;</a><a href="#impl-Into%3CU%3E">Into&lt;U&gt;</a><a href= 
-     "#impl-ToOwned">ToOwned</a><a href="#impl-ToString">ToString</a><a href="#impl-TryFrom%3CU%3E">TryFrom&lt;U&gt;</a><a href="#impl-TryInto%3CU%3E">TryInto&lt;U&gt;</a>
+     "#impl-ToOwned">ToOwned</a><a href="#impl-TryFrom%3CU%3E">TryFrom&lt;U&gt;</a><a href="#impl-TryInto%3CU%3E">TryInto&lt;U&gt;</a>
     </div>
    </div>
-   <p class='location'><a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>err</a></p>
+   <p class='location'><a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>iter</a></p>
    <script>
-   window.sidebarCurrent = {name: 'ErrorSource', ty: 'enum', relpath: ''};
+   window.sidebarCurrent = {name: 'CategoryMatcher', ty: 'enum', relpath: ''};
    </script>
    <script defer
         src="sidebar-items.js"></script>
@@ -107,82 +110,67 @@
   <h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs"
      href="javascript:void(0)"
      title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink'
-     href='../../src/portage_repo/err.rs.html#9-25'
-     title='goto source code'>[src]</a></span><span class='in-band'>Enum <a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>err</a>::<wbr><a class="enum"
-     href=''>ErrorSource</a></span></h1>
+     href='../../src/portage_repo/iter.rs.html#54-61'
+     title='goto source code'>[src]</a></span><span class='in-band'>Enum <a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>iter</a>::<wbr><a class="enum"
+     href=''>CategoryMatcher</a></span></h1>
   <div class="docblock type-decl hidden-by-usual-hider">
-   <pre class='rust enum'><span class="docblock attributes top-attr">#[non_exhaustive]
-</span>pub enum ErrorSource {
-    CategoryFileIterator(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
-    CategoryDirsIterator(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
-    RepoName(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
-    CommentedFileReader(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
-    CategoryMatcher(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+   <pre class='rust enum'>pub enum CategoryMatcher {
+    ExcludeBlackListed(),
+    RequireEbuild(),
 }</pre>
   </div>
   <div class='docblock'>
-   <p>Metadata about origin of an error</p>
+   <p>Kinds of match rules for category validation</p>
   </div>
   <h2 id='variants'
-      class='variants small-section-header'>Variants (Non-exhaustive)<a href='#variants'
+      class='variants small-section-header'>Variants<a href='#variants'
+     class='anchor'></a></h2><span id="variant.ExcludeBlackListed"
+           class="variant small-section-header"><a href="#variant.ExcludeBlackListed"
+     class="anchor field"></a><code id='ExcludeBlackListed.v'>ExcludeBlackListed()</code></span>
+  <div class='docblock'>
+   <p>A matcher rule for categories that excludes members from a predetermined hardcoded set</p>
+  </div><span id="variant.RequireEbuild"
+           class="variant small-section-header"><a href="#variant.RequireEbuild"
+     class="anchor field"></a><code id='RequireEbuild.v'>RequireEbuild()</code></span>
+  <div class='docblock'>
+   <p>A matcher rule for categories that excludes members if the category does not have a subdirectory containing at least one .ebuild file</p>
+  </div>
+  <h2 id='methods'
+      class='small-section-header'>Methods<a href='#methods'
      class='anchor'></a></h2>
-  <div class='docblock non-exhaustive non-exhaustive-enum'>
-   Non-exhaustive enums could have additional variants added in future. Therefore, when matching against variants of non-exhaustive enums, an extra wildcard arm must be added to account for any future variants.
-  </div><span id="variant.CategoryFileIterator"
-           class="variant small-section-header"><a href="#variant.CategoryFileIterator"
-     class="anchor field"></a><code id='CategoryFileIterator.v'>CategoryFileIterator(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
-  <div class='docblock'>
-   <p>An error from a CategoryFileIterator</p>
-  </div><span id="variant.CategoryDirsIterator"
-           class="variant small-section-header"><a href="#variant.CategoryDirsIterator"
-     class="anchor field"></a><code id='CategoryDirsIterator.v'>CategoryDirsIterator(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
-  <div class='docblock'>
-   <p>An error from a CategoryDirsIterator</p>
-  </div><span id="variant.RepoName"
-           class="variant small-section-header"><a href="#variant.RepoName"
-     class="anchor field"></a><code id='RepoName.v'>RepoName(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
-  <div class='docblock'>
-   <p>An error returned from a RepoName file decoder</p>
-  </div><span id="variant.CommentedFileReader"
-           class="variant small-section-header"><a href="#variant.CommentedFileReader"
-     class="anchor field"></a><code id='CommentedFileReader.v'>CommentedFileReader(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
-  <div class='docblock'>
-   <p>An error returned from a CommentedFileReader decoder</p>
-  </div><span id="variant.CategoryMatcher"
-           class="variant small-section-header"><a href="#variant.CategoryMatcher"
-     class="anchor field"></a><code id='CategoryMatcher.v'>CategoryMatcher(&amp;'static <a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
-     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
-  <div class='docblock'>
-   <p>An error returned from CategoryMatcher</p>
+  <h3 id='impl'
+      class='impl'><code class='in-band'>impl <a class="enum"
+     href="../../portage_repo/iter/enum.CategoryMatcher.html"
+     title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a href='#impl'
+     class='anchor'></a><a class='srclink'
+     href='../../src/portage_repo/iter.rs.html#63-184'
+     title='goto source code'>[src]</a></h3>
+  <div class='impl-items'>
+   <h4 id='method.select'
+       class="method"><code id='select.v'>pub fn <a href='#method.select'
+      class='fnname'>select</a>&lt;P&gt;(self, category_path: P) -&gt; <a class="enum"
+      href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html"
+      title="enum core::result::Result">Result</a>&lt;<a class="primitive"
+      href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a class="enum"
+      href="../../portage_repo/err/enum.ErrorKind.html"
+      title="enum portage_repo::err::ErrorKind">ErrorKind</a>&gt; <span class="where fmt-newline">where<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;P: <a class="trait"
+      href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html"
+      title="trait core::convert::Into">Into</a>&lt;<a class="struct"
+      href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
+      title="struct std::path::PathBuf">PathBuf</a>&gt; + <a class="trait"
+      href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html"
+      title="trait core::fmt::Debug">Debug</a>,<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;Self: <a class="trait"
+      href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html"
+      title="trait core::marker::Copy">Copy</a>,&nbsp;</span></code><a class='srclink'
+      href='../../src/portage_repo/iter.rs.html#67-80'
+      title='goto source code'>[src]</a></h4>
+   <div class='docblock'>
+    <p>Apply the given matcher against a category at path <code>category_path</code> and returns a <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#Some.v"
+       title="`Some`"><code>Some</code></a> for valid entries and errors, and returns a <a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#None.v"
+       title="`None`"><code>None</code></a> for paths that are excluded</p>
+   </div>
   </div>
   <h2 id='implementations'
       class='small-section-header'>Trait Implementations<a href='#implementations'
@@ -192,28 +180,28 @@
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/marker/trait.Copy.html"
       title="trait core::marker::Copy">Copy</a> for <a class="enum"
-      href="../../portage_repo/err/enum.ErrorSource.html"
-      title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a href='#impl-Copy'
+      href="../../portage_repo/iter/enum.CategoryMatcher.html"
+      title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a href='#impl-Copy'
       class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#7'
+      href='../../src/portage_repo/iter.rs.html#53'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'></div>
    <h3 id='impl-Clone'
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html"
       title="trait core::clone::Clone">Clone</a> for <a class="enum"
-      href="../../portage_repo/err/enum.ErrorSource.html"
-      title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a href='#impl-Clone'
+      href="../../portage_repo/iter/enum.CategoryMatcher.html"
+      title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a href='#impl-Clone'
       class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#7'
+      href='../../src/portage_repo/iter.rs.html#53'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
     <h4 id='method.clone'
         class="method hidden"><code id='clone.v'>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone'
        class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum"
-       href="../../portage_repo/err/enum.ErrorSource.html"
-       title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a class='srclink'
-       href='../../src/portage_repo/err.rs.html#7'
+       href="../../portage_repo/iter/enum.CategoryMatcher.html"
+       title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a class='srclink'
+       href='../../src/portage_repo/iter.rs.html#53'
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
@@ -229,47 +217,24 @@
      <p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
     </div>
    </div>
-   <h3 id='impl-Display'
-       class='impl'><code class='in-band'>impl <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html"
-      title="trait core::fmt::Display">Display</a> for <a class="enum"
-      href="../../portage_repo/err/enum.ErrorSource.html"
-      title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a href='#impl-Display'
-      class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#7'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'>
-    <h4 id='method.fmt'
-        class="method hidden"><code id='fmt.v'>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt'
-       class='fnname'>fmt</a>(&amp;self, fmt: &amp;mut <a class="struct"
-       href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html"
-       title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type"
-       href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html"
-       title="type core::fmt::Result">Result</a></code><a class='srclink'
-       href='../../src/portage_repo/err.rs.html#7'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html#tymethod.fmt">Read more</a></p>
-    </div>
-   </div>
    <h3 id='impl-Debug'
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html"
       title="trait core::fmt::Debug">Debug</a> for <a class="enum"
-      href="../../portage_repo/err/enum.ErrorSource.html"
-      title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a href='#impl-Debug'
+      href="../../portage_repo/iter/enum.CategoryMatcher.html"
+      title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a href='#impl-Debug'
       class='anchor'></a><a class='srclink'
-      href='../../src/portage_repo/err.rs.html#7'
+      href='../../src/portage_repo/iter.rs.html#53'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
-    <h4 id='method.fmt-1'
-        class="method hidden"><code id='fmt.v-1'>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt'
+    <h4 id='method.fmt'
+        class="method hidden"><code id='fmt.v'>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt'
        class='fnname'>fmt</a>(&amp;self, f: &amp;mut <a class="struct"
        href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html"
        title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type"
        href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html"
        title="type core::fmt::Result">Result</a></code><a class='srclink'
-       href='../../src/portage_repo/err.rs.html#7'
+       href='../../src/portage_repo/iter.rs.html#53'
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
@@ -284,16 +249,16 @@
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html"
       title="trait core::marker::Send">Send</a> for <a class="enum"
-      href="../../portage_repo/err/enum.ErrorSource.html"
-      title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a href='#impl-Send'
+      href="../../portage_repo/iter/enum.CategoryMatcher.html"
+      title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a href='#impl-Send'
       class='anchor'></a></h3>
    <div class='impl-items'></div>
    <h3 id='impl-Sync'
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html"
       title="trait core::marker::Sync">Sync</a> for <a class="enum"
-      href="../../portage_repo/err/enum.ErrorSource.html"
-      title="enum portage_repo::err::ErrorSource">ErrorSource</a></code><a href='#impl-Sync'
+      href="../../portage_repo/iter/enum.CategoryMatcher.html"
+      title="enum portage_repo::iter::CategoryMatcher">CategoryMatcher</a></code><a href='#impl-Sync'
       class='anchor'></a></h3>
    <div class='impl-items'></div>
   </div>
@@ -364,30 +329,6 @@
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Performs the conversion.</p>
-    </div>
-   </div>
-   <h3 id='impl-ToString'
-       class='impl'><code class='in-band'>impl&lt;T&gt; <a class="trait"
-      href="https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html"
-      title="trait alloc::string::ToString">ToString</a> for T <span class="where fmt-newline">where<br>
-   &nbsp;&nbsp;&nbsp;&nbsp;T: <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/fmt/trait.Display.html"
-      title="trait core::fmt::Display">Display</a> + ?<a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html"
-      title="trait core::marker::Sized">Sized</a>,&nbsp;</span></code><a href='#impl-ToString'
-      class='anchor'></a><a class='srclink'
-      href='https://doc.rust-lang.org/nightly/src/alloc/string.rs.html#2132-2142'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'>
-    <h4 id='method.to_string'
-        class="method hidden"><code id='to_string.v'>default fn <a href='https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html#tymethod.to_string'
-       class='fnname'>to_string</a>(&amp;self) -&gt; <a class="struct"
-       href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html"
-       title="struct alloc::string::String">String</a></code><a class='srclink'
-       href='https://doc.rust-lang.org/nightly/src/alloc/string.rs.html#2134-2141'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>Converts the given value to a <code>String</code>. <a href="https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html#tymethod.to_string">Read more</a></p>
     </div>
    </div>
    <h3 id='impl-From%3CT%3E'

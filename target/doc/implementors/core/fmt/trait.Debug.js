@@ -25,6 +25,14 @@
   , synthetic: false
   , types: ["portage_repo::iter::CategoryFileIterator"]
  }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"portage_repo/iter/enum.CategoryMatcher.html\" title=\"enum portage_repo::iter::CategoryMatcher\">CategoryMatcher</a>"
+  , synthetic: false
+  , types: ["portage_repo::iter::CategoryMatcher"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryDirsIterator.html\" title=\"struct portage_repo::iter::CategoryDirsIterator\">CategoryDirsIterator</a>"
+  , synthetic: false
+  , types: ["portage_repo::iter::CategoryDirsIterator"]
+ }, {
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"portage_repo/struct.Repository.html\" title=\"struct portage_repo::Repository\">Repository</a>"
   , synthetic: false
   , types: ["portage_repo::Repository"]

@@ -40,6 +40,14 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryFileIterator.html\" title=\"struct portage_repo::iter::CategoryFileIterator\">CategoryFileIterator</a>"
   , synthetic: true
   , types: ["portage_repo::iter::CategoryFileIterator"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryDirsIterator.html\" title=\"struct portage_repo::iter::CategoryDirsIterator\">CategoryDirsIterator</a>"
+  , synthetic: true
+  , types: ["portage_repo::iter::CategoryDirsIterator"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"enum\" href=\"portage_repo/iter/enum.CategoryMatcher.html\" title=\"enum portage_repo::iter::CategoryMatcher\">CategoryMatcher</a>"
+  , synthetic: true
+  , types: ["portage_repo::iter::CategoryMatcher"]
  }, ];
 
  if (window.register_implementors) {

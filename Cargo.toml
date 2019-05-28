@@ -11,7 +11,8 @@ keywords = ["gentoo", "portage", "repository" ]
 categories = ["filesystem"]
 readme = "src/lib.md"
 
-[dependencies]
+[dependencies.libc]
+version = "~0.2"
 
 [dependencies.display_attr]
 version = "~0.1"
@@ -53,4 +54,8 @@ doc = true
 
 [[example]]
 name = "repo-categories-byfile"
+doc = true
+
+[[example]]
+name = "repo-categories-bydiscover"
 doc = true

@@ -53,6 +53,7 @@ if [[ "${STABLE:-0}" == 0 ]]; then
   "--disable-minification"
   "--enable-index-page"
   "--extern-html-root-url" "display_attr=https://docs.rs/display_attr/0.1.1"
+  "--extern-html-root-url" "libc=https://docs.rs/libc/0.2.58"
   )
 fi
 

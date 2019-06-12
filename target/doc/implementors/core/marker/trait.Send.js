@@ -45,6 +45,10 @@
   , synthetic: true
   , types: ["portage_repo::iter::CategoryDirsIterator"]
  }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryIterator.html\" title=\"struct portage_repo::iter::CategoryIterator\">CategoryIterator</a>"
+  , synthetic: true
+  , types: ["portage_repo::iter::CategoryIterator"]
+ }, {
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"enum\" href=\"portage_repo/iter/enum.CategoryMatcher.html\" title=\"enum portage_repo::iter::CategoryMatcher\">CategoryMatcher</a>"
   , synthetic: true
   , types: ["portage_repo::iter::CategoryMatcher"]

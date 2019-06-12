@@ -16,6 +16,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/iter/traits/iterator/trait.Iterator.html\" title=\"trait core::iter::traits::iterator::Iterator\">Iterator</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryDirsIterator.html\" title=\"struct portage_repo::iter::CategoryDirsIterator\">CategoryDirsIterator</a>"
   , synthetic: false
   , types: ["portage_repo::iter::CategoryDirsIterator"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/iter/traits/iterator/trait.Iterator.html\" title=\"trait core::iter::traits::iterator::Iterator\">Iterator</a> for <a class=\"struct\" href=\"portage_repo/iter/struct.CategoryIterator.html\" title=\"struct portage_repo::iter::CategoryIterator\">CategoryIterator</a>"
+  , synthetic: false
+  , types: ["portage_repo::iter::CategoryIterator"]
  }, ];
 
  if (window.register_implementors) {

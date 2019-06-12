@@ -58,8 +58,8 @@ searchIndex["portage_repo"] = {
    ]
    , [
     ["string"]
-    , ["result", ["string", "errorkind"]]
     , ["errorkind"]
+    , ["result", ["string", "errorkind"]]
    ]
   ]]
   , [11, "for_file", "", "Creates an iterating reader for the given file", 3, [
@@ -83,6 +83,7 @@ searchIndex["portage_repo"] = {
   , [0, "iter", "portage_repo", "Various iterators over portage structures", null, null]
   , [3, "CategoryFileIterator", "portage_repo::iter", "Iterate a `categories` file in a portage repository", null, null]
   , [3, "CategoryDirsIterator", "", "Iterate categories in a portage repository via discovery", null, null]
+  , [3, "CategoryIterator", "", "Iterate over a repositories categories", null, null]
   , [4, "CategoryMatcher", "", "Kinds of match rules for category validation", null, null]
   , [13, "ExcludeBlackListed", "", "A matcher rule for categories that excludes members from a…", 5, null]
   , [13, "RequireEbuild", "", "A matcher rule for categories that excludes members if the…", 5, null]
@@ -115,32 +116,18 @@ searchIndex["portage_repo"] = {
     , ["errorkind"]
    ]
   ]]
-  , [11, "new", "portage_repo", "Construct a new Repository trait object", 8, [
+  , [11, "for_repo", "", "Construct a discovery based category iterator for a…", 8, [
    [
     ["p"]
    ]
-   , ["self"]
-  ]]
-  , [11, "path", "", "Returns the path to this repository", 8, [
-   [
-    ["self"]
-   ]
-   , ["pathbuf"]
-  ]]
-  , [11, "name", "", "Extract this repositories name from its profiles dir", 8, [
-   [
-    ["self"]
-   ]
    , [
-    ["string"]
-    , ["result", ["string", "errorkind"]]
+    ["result", ["errorkind"]]
     , ["errorkind"]
    ]
   ]]
-  , [11, "new", "", "Construct a new [`Category`] explicitly", 9, [
+  , [11, "new", "portage_repo", "Construct a new Repository trait object", 9, [
    [
-    ["s"]
-    , ["p"]
+    ["p"]
    ]
    , ["self"]
   ]]
@@ -150,13 +137,36 @@ searchIndex["portage_repo"] = {
    ]
    , ["pathbuf"]
   ]]
-  , [11, "name", "", "Return the name of the category", 9, [
+  , [11, "name", "", "Extract this repositories name from its profiles dir", 9, [
+   [
+    ["self"]
+   ]
+   , [
+    ["string"]
+    , ["errorkind"]
+    , ["result", ["string", "errorkind"]]
+   ]
+  ]]
+  , [11, "new", "", "Construct a new [`Category`] explicitly", 10, [
+   [
+    ["s"]
+    , ["p"]
+   ]
+   , ["self"]
+  ]]
+  , [11, "path", "", "Returns the path to this repository", 10, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
+  ]]
+  , [11, "name", "", "Return the name of the category", 10, [
    [
     ["self"]
    ]
    , ["string"]
   ]]
-  , [11, "new", "", "Construct a new Package Type Object", 10, [
+  , [11, "new", "", "Construct a new Package Type Object", 11, [
    [
     ["ss"]
     , ["s"]
@@ -164,19 +174,19 @@ searchIndex["portage_repo"] = {
    ]
    , ["self"]
   ]]
-  , [11, "path", "", "Return the path to a gentoo package", 10, [
+  , [11, "path", "", "Return the path to a gentoo package", 11, [
    [
     ["self"]
    ]
    , ["pathbuf"]
   ]]
-  , [11, "name", "", "Get the full name of this package", 10, [
+  , [11, "name", "", "Get the full name of this package", 11, [
    [
     ["self"]
    ]
    , ["string"]
   ]]
-  , [11, "new", "", "Construct a new ebuild explicitly", 11, [
+  , [11, "new", "", "Construct a new ebuild explicitly", 12, [
    [
     ["ss"]
     , ["sss"]
@@ -185,61 +195,11 @@ searchIndex["portage_repo"] = {
    ]
    , ["self"]
   ]]
-  , [11, "path", "", "Returns a path to the ebuild file", 11, [
+  , [11, "path", "", "Returns a path to the ebuild file", 12, [
    [
     ["self"]
    ]
    , ["pathbuf"]
-  ]]
-  , [11, "to_owned", "", "", 8, [
-   [
-    ["self"]
-   ]
-   , ["t"]
-  ]]
-  , [11, "clone_into", "", "", 8, [
-   [
-    ["t"]
-    , ["self"]
-   ]
-  ]]
-  , [11, "into", "", "", 8, [
-   []
-   , ["u"]
-  ]]
-  , [11, "from", "", "", 8, [
-   [
-    ["t"]
-   ]
-   , ["t"]
-  ]]
-  , [11, "try_from", "", "", 8, [
-   [
-    ["u"]
-   ]
-   , ["result"]
-  ]]
-  , [11, "try_into", "", "", 8, [
-   []
-   , ["result"]
-  ]]
-  , [11, "borrow_mut", "", "", 8, [
-   [
-    ["self"]
-   ]
-   , ["t"]
-  ]]
-  , [11, "borrow", "", "", 8, [
-   [
-    ["self"]
-   ]
-   , ["t"]
-  ]]
-  , [11, "type_id", "", "", 8, [
-   [
-    ["self"]
-   ]
-   , ["typeid"]
   ]]
   , [11, "to_owned", "", "", 9, [
    [
@@ -386,6 +346,56 @@ searchIndex["portage_repo"] = {
    , ["t"]
   ]]
   , [11, "type_id", "", "", 11, [
+   [
+    ["self"]
+   ]
+   , ["typeid"]
+  ]]
+  , [11, "to_owned", "", "", 12, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "clone_into", "", "", 12, [
+   [
+    ["t"]
+    , ["self"]
+   ]
+  ]]
+  , [11, "into", "", "", 12, [
+   []
+   , ["u"]
+  ]]
+  , [11, "from", "", "", 12, [
+   [
+    ["t"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "try_from", "", "", 12, [
+   [
+    ["u"]
+   ]
+   , ["result"]
+  ]]
+  , [11, "try_into", "", "", 12, [
+   []
+   , ["result"]
+  ]]
+  , [11, "borrow_mut", "", "", 12, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "borrow", "", "", 12, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "type_id", "", "", 12, [
    [
     ["self"]
    ]
@@ -709,6 +719,48 @@ searchIndex["portage_repo"] = {
    ]
    , ["typeid"]
   ]]
+  , [11, "into", "", "", 8, [
+   []
+   , ["u"]
+  ]]
+  , [11, "into_iter", "", "", 8, [
+   []
+   , ["i"]
+  ]]
+  , [11, "from", "", "", 8, [
+   [
+    ["t"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "try_from", "", "", 8, [
+   [
+    ["u"]
+   ]
+   , ["result"]
+  ]]
+  , [11, "try_into", "", "", 8, [
+   []
+   , ["result"]
+  ]]
+  , [11, "borrow_mut", "", "", 8, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "borrow", "", "", 8, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "type_id", "", "", 8, [
+   [
+    ["self"]
+   ]
+   , ["typeid"]
+  ]]
   , [11, "to_owned", "", "", 5, [
    [
     ["self"]
@@ -759,104 +811,66 @@ searchIndex["portage_repo"] = {
    ]
    , ["typeid"]
   ]]
-  , [11, "eq", "portage_repo", "", 8, [
+  , [11, "eq", "portage_repo", "", 9, [
    [
     ["self"]
     , ["repository"]
-   ]
-   , ["bool"]
-  ]]
-  , [11, "ne", "", "", 8, [
-   [
-    ["self"]
-    , ["repository"]
-   ]
-   , ["bool"]
-  ]]
-  , [11, "eq", "", "", 9, [
-   [
-    ["self"]
-    , ["category"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 9, [
    [
     ["self"]
-    , ["category"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "eq", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "eq", "", "", 11, [
    [
-    ["self"]
-    , ["ebuild"]
+    ["package"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ne", "", "", 11, [
    [
+    ["package"]
+    , ["self"]
+   ]
+   , ["bool"]
+  ]]
+  , [11, "eq", "", "", 12, [
+   [
     ["self"]
     , ["ebuild"]
    ]
    , ["bool"]
   ]]
-  , [11, "partial_cmp", "", "", 8, [
+  , [11, "ne", "", "", 12, [
    [
     ["self"]
-    , ["repository"]
-   ]
-   , [
-    ["ordering"]
-    , ["option", ["ordering"]]
-   ]
-  ]]
-  , [11, "lt", "", "", 8, [
-   [
-    ["self"]
-    , ["repository"]
-   ]
-   , ["bool"]
-  ]]
-  , [11, "le", "", "", 8, [
-   [
-    ["self"]
-    , ["repository"]
-   ]
-   , ["bool"]
-  ]]
-  , [11, "gt", "", "", 8, [
-   [
-    ["self"]
-    , ["repository"]
-   ]
-   , ["bool"]
-  ]]
-  , [11, "ge", "", "", 8, [
-   [
-    ["self"]
-    , ["repository"]
+    , ["ebuild"]
    ]
    , ["bool"]
   ]]
   , [11, "partial_cmp", "", "", 9, [
    [
     ["self"]
-    , ["category"]
+    , ["repository"]
    ]
    , [
     ["ordering"]
@@ -866,35 +880,35 @@ searchIndex["portage_repo"] = {
   , [11, "lt", "", "", 9, [
    [
     ["self"]
-    , ["category"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 9, [
    [
     ["self"]
-    , ["category"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 9, [
    [
     ["self"]
-    , ["category"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 9, [
    [
     ["self"]
-    , ["category"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
   , [11, "partial_cmp", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , [
     ["ordering"]
@@ -903,33 +917,71 @@ searchIndex["portage_repo"] = {
   ]]
   , [11, "lt", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "le", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "gt", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "ge", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["bool"]
   ]]
   , [11, "partial_cmp", "", "", 11, [
+   [
+    ["package"]
+    , ["self"]
+   ]
+   , [
+    ["ordering"]
+    , ["option", ["ordering"]]
+   ]
+  ]]
+  , [11, "lt", "", "", 11, [
+   [
+    ["package"]
+    , ["self"]
+   ]
+   , ["bool"]
+  ]]
+  , [11, "le", "", "", 11, [
+   [
+    ["package"]
+    , ["self"]
+   ]
+   , ["bool"]
+  ]]
+  , [11, "gt", "", "", 11, [
+   [
+    ["package"]
+    , ["self"]
+   ]
+   , ["bool"]
+  ]]
+  , [11, "ge", "", "", 11, [
+   [
+    ["package"]
+    , ["self"]
+   ]
+   , ["bool"]
+  ]]
+  , [11, "partial_cmp", "", "", 12, [
    [
     ["self"]
     , ["ebuild"]
@@ -939,67 +991,61 @@ searchIndex["portage_repo"] = {
     , ["option", ["ordering"]]
    ]
   ]]
-  , [11, "lt", "", "", 11, [
+  , [11, "lt", "", "", 12, [
    [
     ["self"]
     , ["ebuild"]
    ]
    , ["bool"]
   ]]
-  , [11, "le", "", "", 11, [
+  , [11, "le", "", "", 12, [
    [
     ["self"]
     , ["ebuild"]
    ]
    , ["bool"]
   ]]
-  , [11, "gt", "", "", 11, [
+  , [11, "gt", "", "", 12, [
    [
     ["self"]
     , ["ebuild"]
    ]
    , ["bool"]
   ]]
-  , [11, "ge", "", "", 11, [
+  , [11, "ge", "", "", 12, [
    [
     ["self"]
     , ["ebuild"]
    ]
    , ["bool"]
   ]]
-  , [11, "cmp", "", "", 8, [
+  , [11, "cmp", "", "", 9, [
    [
     ["self"]
     , ["repository"]
    ]
    , ["ordering"]
   ]]
-  , [11, "cmp", "", "", 9, [
-   [
-    ["self"]
-    , ["category"]
-   ]
-   , ["ordering"]
-  ]]
   , [11, "cmp", "", "", 10, [
    [
-    ["self"]
-    , ["package"]
+    ["category"]
+    , ["self"]
    ]
    , ["ordering"]
   ]]
   , [11, "cmp", "", "", 11, [
    [
+    ["package"]
+    , ["self"]
+   ]
+   , ["ordering"]
+  ]]
+  , [11, "cmp", "", "", 12, [
+   [
     ["self"]
     , ["ebuild"]
    ]
    , ["ordering"]
-  ]]
-  , [11, "as_ref", "", "", 8, [
-   [
-    ["self"]
-   ]
-   , ["pathbuf"]
   ]]
   , [11, "as_ref", "", "", 9, [
    [
@@ -1014,6 +1060,12 @@ searchIndex["portage_repo"] = {
    , ["pathbuf"]
   ]]
   , [11, "as_ref", "", "", 11, [
+   [
+    ["self"]
+   ]
+   , ["pathbuf"]
+  ]]
+  , [11, "as_ref", "", "", 12, [
    [
     ["self"]
    ]
@@ -1037,25 +1089,25 @@ searchIndex["portage_repo"] = {
    ]
    , ["categorymatcher"]
   ]]
-  , [11, "clone", "portage_repo", "", 8, [
+  , [11, "clone", "portage_repo", "", 9, [
    [
     ["self"]
    ]
    , ["repository"]
   ]]
-  , [11, "clone", "", "", 9, [
+  , [11, "clone", "", "", 10, [
    [
     ["self"]
    ]
    , ["category"]
   ]]
-  , [11, "clone", "", "", 10, [
+  , [11, "clone", "", "", 11, [
    [
     ["self"]
    ]
    , ["package"]
   ]]
-  , [11, "clone", "", "", 11, [
+  , [11, "clone", "", "", 12, [
    [
     ["self"]
    ]
@@ -1085,13 +1137,13 @@ searchIndex["portage_repo"] = {
    ]
    , ["option"]
   ]]
-  , [11, "hash", "portage_repo", "", 8, [
+  , [11, "next", "", "", 8, [
    [
     ["self"]
-    , ["__h"]
    ]
+   , ["option"]
   ]]
-  , [11, "hash", "", "", 9, [
+  , [11, "hash", "portage_repo", "", 9, [
    [
     ["self"]
     , ["__h"]
@@ -1104,6 +1156,12 @@ searchIndex["portage_repo"] = {
    ]
   ]]
   , [11, "hash", "", "", 11, [
+   [
+    ["self"]
+    , ["__h"]
+   ]
+  ]]
+  , [11, "hash", "", "", 12, [
    [
     ["self"]
     , ["__h"]
@@ -1179,14 +1237,14 @@ searchIndex["portage_repo"] = {
    ]
    , ["result"]
   ]]
-  , [11, "fmt", "portage_repo", "", 8, [
+  , [11, "fmt", "", "", 8, [
    [
     ["self"]
     , ["formatter"]
    ]
    , ["result"]
   ]]
-  , [11, "fmt", "", "", 9, [
+  , [11, "fmt", "portage_repo", "", 9, [
    [
     ["self"]
     , ["formatter"]
@@ -1207,6 +1265,13 @@ searchIndex["portage_repo"] = {
    ]
    , ["result"]
   ]]
+  , [11, "fmt", "", "", 12, [
+   [
+    ["self"]
+    , ["formatter"]
+   ]
+   , ["result"]
+  ]]
  ]
  , "p": [
   [4, "ErrorSource"]
@@ -1217,6 +1282,7 @@ searchIndex["portage_repo"] = {
   , [4, "CategoryMatcher"]
   , [3, "CategoryFileIterator"]
   , [3, "CategoryDirsIterator"]
+  , [3, "CategoryIterator"]
   , [3, "Repository"]
   , [3, "Category"]
   , [3, "Package"]

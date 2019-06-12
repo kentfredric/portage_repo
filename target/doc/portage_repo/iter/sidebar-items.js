@@ -5,5 +5,6 @@ initSidebarItems({
  , "struct": [
   ["CategoryDirsIterator", "Iterate categories in a portage repository via discovery"]
   , ["CategoryFileIterator", "Iterate a `categories` file in a portage repository"]
+  , ["CategoryIterator", "Iterate over a repositories categories"]
  ]
 });

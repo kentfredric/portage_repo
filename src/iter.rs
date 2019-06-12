@@ -271,3 +271,55 @@ impl Iterator for CategoryDirsIterator {
         }
     }
 }
+
+/// Iterate over a repositories categories
+#[derive(Debug)]
+pub struct CategoryIterator {
+    inner: IteratorKind,
+}
+
+#[derive(Debug)]
+enum IteratorKind {
+    ByFile(CategoryFileIterator),
+    ByDiscover(CategoryDirsIterator),
+}
+
+impl CategoryIterator {
+    /// Construct a discovery based category iterator for a repository
+    pub fn for_repo<P>(root: P) -> Result<Self, ErrorKind>
+    where
+        P: Into<PathBuf>,
+    {
+        let my_root = root.into();
+
+        match CategoryFileIterator::for_file(
+            &my_root,
+            &my_root.join("profiles/categories"),
+        ) {
+            Ok(it) => return Ok(Self { inner: IteratorKind::ByFile(it) }),
+            Err(ErrorKind::PathNotFound(..)) => {},
+            Err(e) => return Err(e),
+        }
+        match CategoryDirsIterator::for_repo(&my_root) {
+            Ok(it) => Ok(Self { inner: IteratorKind::ByDiscover(it) }),
+            Err(e) => Err(e),
+        }
+    }
+}
+
+impl Iterator for CategoryIterator {
+    type Item = Result<Category, ErrorKind>;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        match &mut self.inner {
+            IteratorKind::ByFile(f) => f.next().and_then(|r| match r {
+                Ok(c) => Some(Ok(c)),
+                Err(e) => Some(Err(e)),
+            }),
+            IteratorKind::ByDiscover(f) => f.next().and_then(|r| match r {
+                Ok(c) => Some(Ok(c)),
+                Err(e) => Some(Err(e)),
+            }),
+        }
+    }
+}

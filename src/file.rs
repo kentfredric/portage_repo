@@ -97,3 +97,25 @@ impl Iterator for CommentedFileReader {
         }
     }
 }
+
+/// Decode `${repo}/profiles/categories`
+#[derive(Debug)]
+pub struct Categories {
+    file: CommentedFileReader,
+}
+
+impl Categories {
+    /// Creates an iterating reader for the given file
+    pub fn for_file<P>(path: P) -> Result<Self, ErrorKind>
+    where
+        P: Into<PathBuf>,
+    {
+        Ok(Self { file: CommentedFileReader::for_file(path)? })
+    }
+}
+
+impl Iterator for Categories {
+    type Item = Result<String, ErrorKind>;
+
+    fn next(&mut self) -> Option<Self::Item> { self.file.next() }
+}

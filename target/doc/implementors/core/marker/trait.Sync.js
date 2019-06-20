@@ -32,6 +32,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"struct\" href=\"portage_repo/file/struct.CommentedFileReader.html\" title=\"struct portage_repo::file::CommentedFileReader\">CommentedFileReader</a>"
   , synthetic: true
   , types: ["portage_repo::file::CommentedFileReader"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html\" title=\"trait core::marker::Sync\">Sync</a> for <a class=\"struct\" href=\"portage_repo/file/struct.Categories.html\" title=\"struct portage_repo::file::Categories\">Categories</a>"
+  , synthetic: true
+  , types: ["portage_repo::file::Categories"]
  }, ];
 
  if (window.register_implementors) {

@@ -13,6 +13,9 @@ readme = "src/lib.md"
 
 [dependencies]
 
+[dependencies.display_attr]
+version = "~0.1"
+
 [dev-dependencies.display_attr]
 version = "~0.1"
 

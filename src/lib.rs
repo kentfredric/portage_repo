@@ -9,6 +9,7 @@
 use std::path::PathBuf;
 
 pub mod err;
+pub mod file;
 
 /// Represents a gentoo repository
 #[cfg_attr(feature = "external_doc", doc(include = "struct.Repository.md"))]

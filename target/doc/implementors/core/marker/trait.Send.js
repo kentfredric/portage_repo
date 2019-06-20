@@ -28,6 +28,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"struct\" href=\"portage_repo/file/struct.RepoName.html\" title=\"struct portage_repo::file::RepoName\">RepoName</a>"
   , synthetic: true
   , types: ["portage_repo::file::RepoName"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"struct\" href=\"portage_repo/file/struct.CommentedFileReader.html\" title=\"struct portage_repo::file::CommentedFileReader\">CommentedFileReader</a>"
+  , synthetic: true
+  , types: ["portage_repo::file::CommentedFileReader"]
  }, ];
 
  if (window.register_implementors) {

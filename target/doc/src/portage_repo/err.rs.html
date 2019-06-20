@@ -102,6 +102,14 @@
 <span id="26">26</span>
 <span id="27">27</span>
 <span id="28">28</span>
+<span id="29">29</span>
+<span id="30">30</span>
+<span id="31">31</span>
+<span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
@@ -118,6 +126,10 @@
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via RepoName in {} @ l{}:c{}&quot;</span>, <span class="ident">_0</span>, <span class= 
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">RepoName</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
+    <span class="doccomment">/// An error returned from a CommentedFileReader decoder</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via CommentedFileReader in {} @ l{}:c{}&quot;</span>, <span class=
+"ident">_0</span>, <span class="ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">CommentedFileReader</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
 }
 
 <span class="doccomment">/// Types of errors returned by this crate</span>
@@ -128,11 +140,18 @@
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Path {:?} not found: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">PathNotFound</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
-
+    <span class="doccomment">/// A specified path generated IO errors during access</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error accessing path {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class= 
+"ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">PathAccessError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
     <span class="doccomment">/// An error occurred reading a file</span>
     <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error reading {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
 "ident">_1</span>, <span class="ident">_2</span>)]</span>
     <span class="ident">FileReadError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
+    <span class="doccomment">/// Errors occurred decoding file content</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error decoding {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
+"ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">FileDecodeError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
 }
 
 <span class="kw">impl</span> <span class="ident">error</span>::<span class="ident">Error</span> <span class="kw">for</span> <span class="ident">ErrorKind</span> {}

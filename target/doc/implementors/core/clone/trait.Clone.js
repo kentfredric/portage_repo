@@ -1,6 +1,14 @@
 (function() {
  var implementors = {};
  implementors["portage_repo"] = [{
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"enum\" href=\"portage_repo/err/enum.ErrorSource.html\" title=\"enum portage_repo::err::ErrorSource\">ErrorSource</a>"
+  , synthetic: false
+  , types: ["portage_repo::err::ErrorSource"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"enum\" href=\"portage_repo/err/enum.ErrorKind.html\" title=\"enum portage_repo::err::ErrorKind\">ErrorKind</a>"
+  , synthetic: false
+  , types: ["portage_repo::err::ErrorKind"]
+ }, {
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html\" title=\"trait core::clone::Clone\">Clone</a> for <a class=\"struct\" href=\"portage_repo/struct.Repository.html\" title=\"struct portage_repo::Repository\">Repository</a>"
   , synthetic: false
   , types: ["portage_repo::Repository"]

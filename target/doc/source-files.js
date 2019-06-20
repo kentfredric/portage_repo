@@ -2,7 +2,7 @@ var N = null;
 var sourcesIndex = {};
 sourcesIndex["portage_repo"] = {
  "name": ""
- , "files": ["lib.rs"]
+ , "files": ["err.rs", "lib.rs"]
 };
 sourcesIndex["repo_info"] = {
  "name": ""

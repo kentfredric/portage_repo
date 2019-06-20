@@ -7,31 +7,31 @@
  <meta name="generator"
        content="rustdoc">
  <meta name="description"
-       content="API documentation for the Rust `portage_repo` crate.">
+       content="API documentation for the Rust `err` mod in crate `portage_repo`.">
  <meta name="keywords"
-       content="rust, rustlang, rust-lang, portage_repo">
- <title>portage_repo - Rust</title>
+       content="rust, rustlang, rust-lang, err">
+ <title>portage_repo::err - Rust</title>
  <link rel="stylesheet"
        type="text/css"
-       href="../normalize.css">
+       href="../../normalize.css">
  <link rel="stylesheet"
        type="text/css"
-       href="../rustdoc.css"
+       href="../../rustdoc.css"
        id="mainThemeStyle">
  <link rel="stylesheet"
        type="text/css"
-       href="../dark.css">
+       href="../../dark.css">
  <link rel="stylesheet"
        type="text/css"
-       href="../light.css"
+       href="../../light.css"
        id="themeStyle">
- <script src="../storage.js"></script><noscript>
+ <script src="../../storage.js"></script><noscript>
  <link rel="stylesheet"
-       href="../noscript.css"></noscript>
+       href="../../noscript.css"></noscript>
  <link rel="shortcut icon"
-       href="../favicon.ico">
+       href="../../favicon.ico">
  <style type="text/css">
- #crate-search{background-image:url("../down-arrow.svg");}
+ #crate-search{background-image:url("../../down-arrow.svg");}
  </style>
 </head>
 <body class="rustdoc mod">
@@ -39,38 +39,34 @@
  <nav class="sidebar">
   <div class="sidebar-menu">
    &#9776;
-  </div><a href='../portage_repo/index.html'>
-  <div class='logo-container'><img src='../rust-logo.png'
+  </div><a href='../../portage_repo/index.html'>
+  <div class='logo-container'><img src='../../rust-logo.png'
        alt='logo'></div></a>
-  <p class='location'>Crate portage_repo</p>
+  <p class='location'>Module err</p>
   <div class="sidebar-elems">
-   <a id='all-types'
-        href='all.html'>
-   <p>See all portage_repo's items</p></a>
    <div class="block items">
     <ul>
      <li>
-      <a href="#modules">Modules</a>
-     </li>
-     <li>
-      <a href="#structs">Structs</a>
+      <a href="#enums">Enums</a>
      </li>
     </ul>
    </div>
-   <p class='location'></p>
+   <p class='location'><a href='../index.html'>portage_repo</a></p>
    <script>
-   window.sidebarCurrent = {name: 'portage_repo', ty: 'mod', relpath: '../'};
+   window.sidebarCurrent = {name: 'err', ty: 'mod', relpath: '../'};
    </script>
+   <script defer
+        src="../sidebar-items.js"></script>
   </div>
  </nav>
  <div class="theme-picker">
   <button id="theme-picker"
-       aria-label="Pick another theme!"><img src="../brush.svg"
+       aria-label="Pick another theme!"><img src="../../brush.svg"
        width="18"
        alt="Pick another theme!"></button>
   <div id="theme-choices"></div>
  </div>
- <script src="../theme.js"></script>
+ <script src="../../theme.js"></script>
  <nav class="sub">
   <form class="search-form js-only">
    <div class="search-container">
@@ -86,7 +82,7 @@
           placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
           type="search">
     </div><a id="settings-menu"
-         href="../settings.html"><img src="../wheel.svg"
+         href="../../settings.html"><img src="../../wheel.svg"
          width="18"
          alt="Change settings"></a>
    </div>
@@ -97,46 +93,33 @@
   <h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs"
      href="javascript:void(0)"
      title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink'
-     href='../src/portage_repo/lib.rs.html#1-31'
-     title='goto source code'>[src]</a></span><span class='in-band'>Crate <a class="mod"
-     href=''>portage_repo</a></span></h1>
+     href='../../src/portage_repo/err.rs.html#1-16'
+     title='goto source code'>[src]</a></span><span class='in-band'>Module <a href='../index.html'>portage_repo</a>::<wbr><a class="mod"
+     href=''>err</a></span></h1>
   <div class='docblock'>
-   <p>A low-level interface for working with Gentoo portage repositories.</p>
-   <p>This crate provides a collection of utilities for iterating and working with literal filesystem repositories for Gentoo Portage.</p>
-   <div class="example-wrap">
-    <pre class="rust rust-example-rendered">
-<span class="kw">use</span> <span class="ident">portage_repo</span>::<span class="ident">Repository</span>;
-<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">path</span>::<span class="ident">Path</span>;
-<span class="kw">let</span> <span class="ident">r</span> <span class="op">=</span> <span class="ident">Repository</span>::<span class="ident">new</span>(<span class="string">&quot;/usr/portage&quot;</span>);
-<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">r</span>.<span class="ident">path</span>(), <span class="ident">Path</span>::<span class="ident">new</span>(<span class=
-"string">&quot;/usr/portage&quot;</span>));</pre>
-   </div>
+   <p>Various enums for representing Error states</p>
   </div>
-  <h2 id='modules'
-      class='section-header'><a href="#modules">Modules</a></h2>
+  <h2 id='enums'
+      class='section-header'><a href="#enums">Enums</a></h2>
   <table>
    <tr class='module-item'>
     <td>
-     <a class="mod"
-         href="err/index.html"
-         title='portage_repo::err mod'>err</a>
+     <a class="enum"
+         href="enum.ErrorKind.html"
+         title='portage_repo::err::ErrorKind enum'>ErrorKind</a>
     </td>
     <td class='docblock-short'>
-     <p>Various enums for representing Error states</p>
+     <p>Types of errors returned by this crate</p>
     </td>
    </tr>
-  </table>
-  <h2 id='structs'
-      class='section-header'><a href="#structs">Structs</a></h2>
-  <table>
    <tr class='module-item'>
     <td>
-     <a class="struct"
-         href="struct.Repository.html"
-         title='portage_repo::Repository struct'>Repository</a>
+     <a class="enum"
+         href="enum.ErrorSource.html"
+         title='portage_repo::err::ErrorSource enum'>ErrorSource</a>
     </td>
     <td class='docblock-short'>
-     <p>Represents a gentoo repository</p>
+     <p>Metadata about origin of an error</p>
     </td>
    </tr>
   </table>
@@ -179,11 +162,11 @@
   </div>
  </aside>
  <script>
- window.rootPath = "../";window.currentCrate = "portage_repo";
+ window.rootPath = "../../";window.currentCrate = "portage_repo";
  </script>
- <script src="../aliases.js"></script>
- <script src="../main.js"></script>
+ <script src="../../aliases.js"></script>
+ <script src="../../main.js"></script>
  <script defer
-       src="../search-index.js"></script>
+       src="../../search-index.js"></script>
 </body>
 </html>

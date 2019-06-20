@@ -7,31 +7,31 @@
  <meta name="generator"
        content="rustdoc">
  <meta name="description"
-       content="API documentation for the Rust `Repository` struct in crate `portage_repo`.">
+       content="API documentation for the Rust `RepoName` struct in crate `portage_repo`.">
  <meta name="keywords"
-       content="rust, rustlang, rust-lang, Repository">
- <title>portage_repo::Repository - Rust</title>
+       content="rust, rustlang, rust-lang, RepoName">
+ <title>portage_repo::file::RepoName - Rust</title>
  <link rel="stylesheet"
        type="text/css"
-       href="../normalize.css">
+       href="../../normalize.css">
  <link rel="stylesheet"
        type="text/css"
-       href="../rustdoc.css"
+       href="../../rustdoc.css"
        id="mainThemeStyle">
  <link rel="stylesheet"
        type="text/css"
-       href="../dark.css">
+       href="../../dark.css">
  <link rel="stylesheet"
        type="text/css"
-       href="../light.css"
+       href="../../light.css"
        id="themeStyle">
- <script src="../storage.js"></script><noscript>
+ <script src="../../storage.js"></script><noscript>
  <link rel="stylesheet"
-       href="../noscript.css"></noscript>
+       href="../../noscript.css"></noscript>
  <link rel="shortcut icon"
-       href="../favicon.ico">
+       href="../../favicon.ico">
  <style type="text/css">
- #crate-search{background-image:url("../down-arrow.svg");}
+ #crate-search{background-image:url("../../down-arrow.svg");}
  </style>
 </head>
 <body class="rustdoc struct">
@@ -39,21 +39,20 @@
  <nav class="sidebar">
   <div class="sidebar-menu">
    &#9776;
-  </div><a href='../portage_repo/index.html'>
-  <div class='logo-container'><img src='../rust-logo.png'
+  </div><a href='../../portage_repo/index.html'>
+  <div class='logo-container'><img src='../../rust-logo.png'
        alt='logo'></div></a>
-  <p class='location'>Struct Repository</p>
+  <p class='location'>Struct RepoName</p>
   <div class="sidebar-elems">
    <div class="block items">
     <a class="sidebar-title"
          href="#methods">Methods</a>
     <div class="sidebar-links">
-     <a href="#method.new">new</a><a href="#method.path">path</a>
+     <a href="#method.get">get</a><a href="#method.new">new</a>
     </div><a class="sidebar-title"
          href="#implementations">Trait Implementations</a>
     <div class="sidebar-links">
-     <a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a><a href="#impl-Eq">Eq</a><a href="#impl-Hash">Hash</a><a href="#impl-Ord">Ord</a><a href="#impl-PartialEq%3CRepository%3E">PartialEq&lt;Repository&gt;</a><a href= 
-     "#impl-PartialOrd%3CRepository%3E">PartialOrd&lt;Repository&gt;</a>
+     <a href="#impl-Clone">Clone</a><a href="#impl-Debug">Debug</a>
     </div><a class="sidebar-title"
          href="#synthetic-implementations">Auto Trait Implementations</a>
     <div class="sidebar-links">
@@ -65,9 +64,9 @@
      "#impl-ToOwned">ToOwned</a><a href="#impl-TryFrom%3CU%3E">TryFrom&lt;U&gt;</a><a href="#impl-TryInto%3CU%3E">TryInto&lt;U&gt;</a>
     </div>
    </div>
-   <p class='location'><a href='index.html'>portage_repo</a></p>
+   <p class='location'><a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>file</a></p>
    <script>
-   window.sidebarCurrent = {name: 'Repository', ty: 'struct', relpath: ''};
+   window.sidebarCurrent = {name: 'RepoName', ty: 'struct', relpath: ''};
    </script>
    <script defer
         src="sidebar-items.js"></script>
@@ -75,12 +74,12 @@
  </nav>
  <div class="theme-picker">
   <button id="theme-picker"
-       aria-label="Pick another theme!"><img src="../brush.svg"
+       aria-label="Pick another theme!"><img src="../../brush.svg"
        width="18"
        alt="Pick another theme!"></button>
   <div id="theme-choices"></div>
  </div>
- <script src="../theme.js"></script>
+ <script src="../../theme.js"></script>
  <nav class="sub">
   <form class="search-form js-only">
    <div class="search-container">
@@ -96,7 +95,7 @@
           placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
           type="search">
     </div><a id="settings-menu"
-         href="../settings.html"><img src="../wheel.svg"
+         href="../../settings.html"><img src="../../wheel.svg"
          width="18"
          alt="Change settings"></a>
    </div>
@@ -107,278 +106,74 @@
   <h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs"
      href="javascript:void(0)"
      title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink'
-     href='../src/portage_repo/lib.rs.html#17-19'
-     title='goto source code'>[src]</a></span><span class='in-band'>Struct <a href='index.html'>portage_repo</a>::<wbr><a class="struct"
-     href=''>Repository</a></span></h1>
+     href='../../src/portage_repo/file.rs.html#14-16'
+     title='goto source code'>[src]</a></span><span class='in-band'>Struct <a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>file</a>::<wbr><a class="struct"
+     href=''>RepoName</a></span></h1>
   <div class="docblock type-decl hidden-by-usual-hider">
-   <pre class='rust struct'>pub struct Repository { /* fields omitted */ }</pre>
+   <pre class='rust struct'>pub struct RepoName { /* fields omitted */ }</pre>
   </div>
   <div class='docblock'>
-   <p>Represents a gentoo repository</p>
-   <div class="example-wrap">
-    <pre class="rust rust-example-rendered">
-<span class="kw">let</span> <span class="ident">r</span> <span class="op">=</span> <span class="ident">Repository</span>::<span class="ident">new</span>(<span class="string">&quot;/usr/portage&quot;</span>);
-<span class="macro">assert_eq</span><span class="macro">!</span>(<span class="ident">r</span>.<span class="ident">path</span>(), <span class="ident">Path</span>::<span class="ident">new</span>(<span class=
-"string">&quot;/usr/portage&quot;</span>));</pre>
-   </div>
-   <h1 id="construction"
-       class="section-header"><a href="#construction">Construction</a></h1>
-   <p>The core element of a <a href="../portage_repo/struct.Repository.html"
-      title="`Repository`"><code>Repository</code></a> is its path. This can either be a <a href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
-      title="`PathBuf`"><code>PathBuf</code></a> or anything that implements <code><a href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html"
-      title="Into">Into</a>&lt;<a href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
-      title="PathBuf">PathBuf</a>&gt;</code>, such as:</p>
-   <ul>
-    <li>
-     <a href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html"
-         title="`String`"><code>String</code></a>
-    </li>
-    <li>
-     <a href="https://doc.rust-lang.org/nightly/std/ffi/os_str/struct.OsString.html"><code>OsString</code></a>
-    </li>
-    <li>
-     <a href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html"><code>Path</code></a>
-    </li>
-    <li><code><a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html"
-       title="Box">Box</a>&lt;<a href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html">Path</a>&gt;</code></li>
-   </ul>
-   <div class="example-wrap">
-    <pre class="rust rust-example-rendered">
-<span class="ident">Repository</span>::<span class="ident">new</span>(<span class="string">&quot;/usr/portage&quot;</span>);
-<span class="ident">Repository</span>::<span class="ident">new</span>(<span class="ident">String</span>::<span class="ident">from</span>(<span class="string">&quot;/usr/portage&quot;</span>));
-<span class="ident">Repository</span>::<span class="ident">new</span>(<span class="ident">Path</span>::<span class="ident">new</span>(<span class="string">&quot;/usr/portage&quot;</span>));
-<span class="ident">Repository</span>::<span class="ident">new</span>(
-    <span class="ident">Path</span>::<span class="ident">new</span>(<span class="string">&quot;/usr/portage&quot;</span>).<span class="ident">to_path_buf</span>().<span class="ident">into_boxed_path</span>(),
-);</pre>
-   </div>
+   <p>Decode <code>${repo}/profiles/repo_name</code></p>
   </div>
   <h2 id='methods'
       class='small-section-header'>Methods<a href='#methods'
      class='anchor'></a></h2>
   <h3 id='impl'
       class='impl'><code class='in-band'>impl <a class="struct"
-     href="../portage_repo/struct.Repository.html"
-     title="struct portage_repo::Repository">Repository</a></code><a href='#impl'
+     href="../../portage_repo/file/struct.RepoName.html"
+     title="struct portage_repo::file::RepoName">RepoName</a></code><a href='#impl'
      class='anchor'></a><a class='srclink'
-     href='../src/portage_repo/lib.rs.html#21-32'
+     href='../../src/portage_repo/file.rs.html#18-36'
      title='goto source code'>[src]</a></h3>
   <div class='impl-items'>
    <h4 id='method.new'
        class="method"><code id='new.v'>pub fn <a href='#method.new'
-      class='fnname'>new</a>&lt;P&gt;(root: P) -&gt; Self <span class="where fmt-newline">where<br>
+      class='fnname'>new</a>&lt;P&gt;(path: P) -&gt; Self <span class="where fmt-newline">where<br>
    &nbsp;&nbsp;&nbsp;&nbsp;P: <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html"
       title="trait core::convert::Into">Into</a>&lt;<a class="struct"
       href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
       title="struct std::path::PathBuf">PathBuf</a>&gt;,&nbsp;</span></code><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#23-28'
+      href='../../src/portage_repo/file.rs.html#20-25'
       title='goto source code'>[src]</a></h4>
    <div class='docblock'>
-    <p>Construct a new Repository trait object</p>
+    <p>Create a <code>repo_name</code> file decoder for the given file <code>path</code></p>
    </div>
-   <h4 id='method.path'
-       class="method"><code id='path.v'>pub fn <a href='#method.path'
-      class='fnname'>path</a>(&amp;self) -&gt; <a class="struct"
-      href="https://doc.rust-lang.org/nightly/std/path/struct.PathBuf.html"
-      title="struct std::path::PathBuf">PathBuf</a></code><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#31'
+   <h4 id='method.get'
+       class="method"><code id='get.v'>pub fn <a href='#method.get'
+      class='fnname'>get</a>(&amp;self) -&gt; <a class="enum"
+      href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html"
+      title="enum core::result::Result">Result</a>&lt;<a class="struct"
+      href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html"
+      title="struct alloc::string::String">String</a>, <a class="enum"
+      href="../../portage_repo/err/enum.ErrorKind.html"
+      title="enum portage_repo::err::ErrorKind">ErrorKind</a>&gt;</code><a class='srclink'
+      href='../../src/portage_repo/file.rs.html#28-35'
       title='goto source code'>[src]</a></h4>
    <div class='docblock'>
-    <p>Returns the path to this repository</p>
+    <p>Obtain the name of the repo from the file</p>
    </div>
   </div>
   <h2 id='implementations'
       class='small-section-header'>Trait Implementations<a href='#implementations'
      class='anchor'></a></h2>
   <div id='implementations-list'>
-   <h3 id='impl-Eq'
-       class='impl'><code class='in-band'>impl <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/cmp/trait.Eq.html"
-      title="trait core::cmp::Eq">Eq</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Eq'
-      class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'></div>
-   <h3 id='impl-PartialEq%3CRepository%3E'
-       class='impl'><code class='in-band'>impl <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html"
-      title="trait core::cmp::PartialEq">PartialEq</a>&lt;<a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a>&gt; for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-PartialEq%3CRepository%3E'
-      class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'>
-    <h4 id='method.eq'
-        class="method hidden"><code id='eq.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq'
-       class='fnname'>eq</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
-    </div>
-    <h4 id='method.ne'
-        class="method hidden"><code id='ne.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne'
-       class='fnname'>ne</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method tests for <code>!=</code>.</p>
-    </div>
-   </div>
-   <h3 id='impl-PartialOrd%3CRepository%3E'
-       class='impl'><code class='in-band'>impl <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html"
-      title="trait core::cmp::PartialOrd">PartialOrd</a>&lt;<a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a>&gt; for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-PartialOrd%3CRepository%3E'
-      class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'>
-    <h4 id='method.partial_cmp'
-        class="method hidden"><code id='partial_cmp.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#tymethod.partial_cmp'
-       class='fnname'>partial_cmp</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="enum"
-       href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html"
-       title="enum core::option::Option">Option</a>&lt;<a class="enum"
-       href="https://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html"
-       title="enum core::cmp::Ordering">Ordering</a>&gt;</code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method returns an ordering between <code>self</code> and <code>other</code> values if one exists. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#tymethod.partial_cmp">Read more</a></p>
-    </div>
-    <h4 id='method.lt'
-        class="method hidden"><code id='lt.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.lt'
-       class='fnname'>lt</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method tests less than (for <code>self</code> and <code>other</code>) and is used by the <code>&lt;</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.lt">Read more</a></p>
-    </div>
-    <h4 id='method.le'
-        class="method hidden"><code id='le.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.le'
-       class='fnname'>le</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method tests less than or equal to (for <code>self</code> and <code>other</code>) and is used by the <code>&lt;=</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.le">Read
-     more</a></p>
-    </div>
-    <h4 id='method.gt'
-        class="method hidden"><code id='gt.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.gt'
-       class='fnname'>gt</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method tests greater than (for <code>self</code> and <code>other</code>) and is used by the <code>&gt;</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.gt">Read more</a></p>
-    </div>
-    <h4 id='method.ge'
-        class="method hidden"><code id='ge.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.ge'
-       class='fnname'>ge</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method tests greater than or equal to (for <code>self</code> and <code>other</code>) and is used by the <code>&gt;=</code> operator. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialOrd.html#method.ge">Read
-     more</a></p>
-    </div>
-   </div>
-   <h3 id='impl-Ord'
-       class='impl'><code class='in-band'>impl <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html"
-      title="trait core::cmp::Ord">Ord</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Ord'
-      class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'>
-    <h4 id='method.cmp'
-        class="method hidden"><code id='cmp.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#tymethod.cmp'
-       class='fnname'>cmp</a>(&amp;self, other: &amp;<a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a>) -&gt; <a class="enum"
-       href="https://doc.rust-lang.org/nightly/core/cmp/enum.Ordering.html"
-       title="enum core::cmp::Ordering">Ordering</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>This method returns an <code>Ordering</code> between <code>self</code> and <code>other</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#tymethod.cmp">Read more</a></p>
-    </div>
-    <h4 id='method.max'
-        class="method"><code id='max.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#method.max'
-       class='fnname'>max</a>(self, other: Self) -&gt; Self</code><span class='since'
-          title='Stable since Rust version 1.21.0'>1.21.0</span><a class='srclink'
-       href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#549-552'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock'>
-     <p>Compares and returns the maximum of two values. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#method.max">Read more</a></p>
-    </div>
-    <h4 id='method.min'
-        class="method"><code id='min.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#method.min'
-       class='fnname'>min</a>(self, other: Self) -&gt; Self</code><span class='since'
-          title='Stable since Rust version 1.21.0'>1.21.0</span><a class='srclink'
-       href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#566-569'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock'>
-     <p>Compares and returns the minimum of two values. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#method.min">Read more</a></p>
-    </div>
-    <h4 id='method.clamp'
-        class="method"><code id='clamp.v'>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#method.clamp'
-       class='fnname'>clamp</a>(self, min: Self, max: Self) -&gt; Self</code><a class='srclink'
-       href='https://doc.rust-lang.org/nightly/src/core/cmp.rs.html#590-600'
-       title='goto source code'>[src]</a></h4>
-    <div class='stability'>
-     <div class='stab unstable'>
-      <span class='emoji'>🔬</span> This is a nightly-only experimental API. (<code>clamp</code>)
-     </div>
-    </div>
-    <div class='docblock'>
-     <p>Restrict a value to a certain interval. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.Ord.html#method.clamp">Read more</a></p>
-    </div>
-   </div>
    <h3 id='impl-Clone'
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html"
       title="trait core::clone::Clone">Clone</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Clone'
+      href="../../portage_repo/file/struct.RepoName.html"
+      title="struct portage_repo::file::RepoName">RepoName</a></code><a href='#impl-Clone'
       class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
+      href='../../src/portage_repo/file.rs.html#13'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
     <h4 id='method.clone'
         class="method hidden"><code id='clone.v'>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone'
        class='fnname'>clone</a>(&amp;self) -&gt; <a class="struct"
-       href="../portage_repo/struct.Repository.html"
-       title="struct portage_repo::Repository">Repository</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
+       href="../../portage_repo/file/struct.RepoName.html"
+       title="struct portage_repo::file::RepoName">RepoName</a></code><a class='srclink'
+       href='../../src/portage_repo/file.rs.html#13'
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
@@ -394,50 +189,14 @@
      <p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
     </div>
    </div>
-   <h3 id='impl-Hash'
-       class='impl'><code class='in-band'>impl <a class="trait"
-      href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html"
-      title="trait core::hash::Hash">Hash</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Hash'
-      class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
-      title='goto source code'>[src]</a></h3>
-   <div class='impl-items'>
-    <h4 id='method.hash'
-        class="method hidden"><code id='hash.v'>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash'
-       class='fnname'>hash</a>&lt;__H:&nbsp;<a class="trait"
-       href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html"
-       title="trait core::hash::Hasher">Hasher</a>&gt;(&amp;self, state: <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut</a> __H)</code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock hidden'>
-     <p>Feeds this value into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#tymethod.hash">Read more</a></p>
-    </div>
-    <h4 id='method.hash_slice'
-        class="method"><code id='hash_slice.v'>fn <a href='https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice'
-       class='fnname'>hash_slice</a>&lt;H&gt;(data: <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[Self]</a>, state: <a class="primitive"
-       href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut</a> H) <span class="where fmt-newline">where<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;H: <a class="trait"
-       href="https://doc.rust-lang.org/nightly/core/hash/trait.Hasher.html"
-       title="trait core::hash::Hasher">Hasher</a>,&nbsp;</span></code><span class='since'
-          title='Stable since Rust version 1.3.0'>1.3.0</span><a class='srclink'
-       href='https://doc.rust-lang.org/nightly/src/core/hash/mod.rs.html#192-198'
-       title='goto source code'>[src]</a></h4>
-    <div class='docblock'>
-     <p>Feeds a slice of this type into the given [<code>Hasher</code>]. <a href="https://doc.rust-lang.org/nightly/core/hash/trait.Hash.html#method.hash_slice">Read more</a></p>
-    </div>
-   </div>
    <h3 id='impl-Debug'
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html"
       title="trait core::fmt::Debug">Debug</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Debug'
+      href="../../portage_repo/file/struct.RepoName.html"
+      title="struct portage_repo::file::RepoName">RepoName</a></code><a href='#impl-Debug'
       class='anchor'></a><a class='srclink'
-      href='../src/portage_repo/lib.rs.html#16'
+      href='../../src/portage_repo/file.rs.html#13'
       title='goto source code'>[src]</a></h3>
    <div class='impl-items'>
     <h4 id='method.fmt'
@@ -447,7 +206,7 @@
        title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type"
        href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html"
        title="type core::fmt::Result">Result</a></code><a class='srclink'
-       href='../src/portage_repo/lib.rs.html#16'
+       href='../../src/portage_repo/file.rs.html#13'
        title='goto source code'>[src]</a></h4>
     <div class='docblock hidden'>
      <p>Formats the value using the given formatter. <a href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt">Read more</a></p>
@@ -462,16 +221,16 @@
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html"
       title="trait core::marker::Send">Send</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Send'
+      href="../../portage_repo/file/struct.RepoName.html"
+      title="struct portage_repo::file::RepoName">RepoName</a></code><a href='#impl-Send'
       class='anchor'></a></h3>
    <div class='impl-items'></div>
    <h3 id='impl-Sync'
        class='impl'><code class='in-band'>impl <a class="trait"
       href="https://doc.rust-lang.org/nightly/core/marker/trait.Sync.html"
       title="trait core::marker::Sync">Sync</a> for <a class="struct"
-      href="../portage_repo/struct.Repository.html"
-      title="struct portage_repo::Repository">Repository</a></code><a href='#impl-Sync'
+      href="../../portage_repo/file/struct.RepoName.html"
+      title="struct portage_repo::file::RepoName">RepoName</a></code><a href='#impl-Sync'
       class='anchor'></a></h3>
    <div class='impl-items'></div>
   </div>
@@ -735,11 +494,11 @@
   </div>
  </aside>
  <script>
- window.rootPath = "../";window.currentCrate = "portage_repo";
+ window.rootPath = "../../";window.currentCrate = "portage_repo";
  </script>
- <script src="../aliases.js"></script>
- <script src="../main.js"></script>
+ <script src="../../aliases.js"></script>
+ <script src="../../main.js"></script>
  <script defer
-       src="../search-index.js"></script>
+       src="../../search-index.js"></script>
 </body>
 </html>

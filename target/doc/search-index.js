@@ -10,20 +10,91 @@ searchIndex["portage_repo"] = {
   [3, "Repository", "portage_repo", "Represents a gentoo repository", null, null]
   , [0, "err", "", "Various enums for representing Error states", null, null]
   , [4, "ErrorSource", "portage_repo::err", "Metadata about origin of an error", null, null]
+  , [13, "RepoName", "", "An error returned by a RepoName file decoder", 0, null]
   , [4, "ErrorKind", "", "Types of errors returned by this crate", null, null]
-  , [11, "new", "portage_repo", "Construct a new Repository trait object", 0, [
+  , [13, "PathNotFound", "", "A specified path was not found on the filesystem", 1, null]
+  , [13, "FileReadError", "", "An error occurred reading a file", 1, null]
+  , [0, "file", "portage_repo", "Utilities for decoding various portage file formats", null, null]
+  , [3, "RepoName", "portage_repo::file", "Decode `${repo}/profiles/repo_name`", null, null]
+  , [11, "new", "", "Create a `repo_name` file decoder for the given file `path`", 2, [
    [
     ["p"]
    ]
    , ["self"]
   ]]
-  , [11, "path", "", "Returns the path to this repository", 0, [
+  , [11, "get", "", "Obtain the name of the repo from the file", 2, [
+   [
+    ["self"]
+   ]
+   , [
+    ["string"]
+    , ["result", ["string", "errorkind"]]
+    , ["errorkind"]
+   ]
+  ]]
+  , [11, "new", "portage_repo", "Construct a new Repository trait object", 3, [
+   [
+    ["p"]
+   ]
+   , ["self"]
+  ]]
+  , [11, "path", "", "Returns the path to this repository", 3, [
    [
     ["self"]
    ]
    , ["pathbuf"]
   ]]
-  , [11, "to_owned", "", "", 0, [
+  , [11, "to_owned", "", "", 3, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "clone_into", "", "", 3, [
+   [
+    ["t"]
+    , ["self"]
+   ]
+  ]]
+  , [11, "into", "", "", 3, [
+   []
+   , ["u"]
+  ]]
+  , [11, "from", "", "", 3, [
+   [
+    ["t"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "try_from", "", "", 3, [
+   [
+    ["u"]
+   ]
+   , ["result"]
+  ]]
+  , [11, "try_into", "", "", 3, [
+   []
+   , ["result"]
+  ]]
+  , [11, "borrow_mut", "", "", 3, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "borrow", "", "", 3, [
+   [
+    ["self"]
+   ]
+   , ["t"]
+  ]]
+  , [11, "type_id", "", "", 3, [
+   [
+    ["self"]
+   ]
+   , ["typeid"]
+  ]]
+  , [11, "to_owned", "portage_repo::err", "", 0, [
    [
     ["self"]
    ]
@@ -38,6 +109,12 @@ searchIndex["portage_repo"] = {
   , [11, "into", "", "", 0, [
    []
    , ["u"]
+  ]]
+  , [11, "to_string", "", "", 0, [
+   [
+    ["self"]
+   ]
+   , ["string"]
   ]]
   , [11, "from", "", "", 0, [
    [
@@ -72,18 +149,6 @@ searchIndex["portage_repo"] = {
     ["self"]
    ]
    , ["typeid"]
-  ]]
-  , [11, "to_owned", "portage_repo::err", "", 1, [
-   [
-    ["self"]
-   ]
-   , ["t"]
-  ]]
-  , [11, "clone_into", "", "", 1, [
-   [
-    ["t"]
-    , ["self"]
-   ]
   ]]
   , [11, "into", "", "", 1, [
    []
@@ -129,7 +194,7 @@ searchIndex["portage_repo"] = {
    ]
    , ["typeid"]
   ]]
-  , [11, "to_owned", "", "", 2, [
+  , [11, "to_owned", "portage_repo::file", "", 2, [
    [
     ["self"]
    ]
@@ -144,12 +209,6 @@ searchIndex["portage_repo"] = {
   , [11, "into", "", "", 2, [
    []
    , ["u"]
-  ]]
-  , [11, "to_string", "", "", 2, [
-   [
-    ["self"]
-   ]
-   , ["string"]
   ]]
   , [11, "from", "", "", 2, [
    [
@@ -185,97 +244,90 @@ searchIndex["portage_repo"] = {
    ]
    , ["typeid"]
   ]]
-  , [11, "eq", "portage_repo", "", 0, [
+  , [11, "eq", "portage_repo", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
-  , [11, "ne", "", "", 0, [
+  , [11, "ne", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
-  , [11, "partial_cmp", "", "", 0, [
+  , [11, "partial_cmp", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , [
     ["ordering"]
     , ["option", ["ordering"]]
    ]
   ]]
-  , [11, "lt", "", "", 0, [
+  , [11, "lt", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
-  , [11, "le", "", "", 0, [
+  , [11, "le", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
-  , [11, "gt", "", "", 0, [
+  , [11, "gt", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
-  , [11, "ge", "", "", 0, [
+  , [11, "ge", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["bool"]
   ]]
-  , [11, "cmp", "", "", 0, [
+  , [11, "cmp", "", "", 3, [
    [
-    ["repository"]
-    , ["self"]
+    ["self"]
+    , ["repository"]
    ]
    , ["ordering"]
   ]]
-  , [11, "clone", "portage_repo::err", "", 1, [
+  , [11, "clone", "portage_repo::err", "", 0, [
    [
     ["self"]
    ]
    , ["errorsource"]
   ]]
-  , [11, "clone", "", "", 2, [
+  , [11, "clone", "portage_repo::file", "", 2, [
    [
     ["self"]
    ]
-   , ["errorkind"]
+   , ["reponame"]
   ]]
-  , [11, "clone", "portage_repo", "", 0, [
+  , [11, "clone", "portage_repo", "", 3, [
    [
     ["self"]
    ]
    , ["repository"]
   ]]
-  , [11, "hash", "", "", 0, [
+  , [11, "hash", "", "", 3, [
    [
     ["self"]
     , ["__h"]
    ]
   ]]
-  , [11, "fmt", "portage_repo::err", "", 1, [
-   [
-    ["self"]
-    , ["formatter"]
-   ]
-   , ["result"]
-  ]]
-  , [11, "fmt", "", "", 2, [
+  , [11, "fmt", "portage_repo::err", "", 0, [
    [
     ["self"]
     , ["formatter"]
@@ -289,14 +341,28 @@ searchIndex["portage_repo"] = {
    ]
    , ["result"]
   ]]
-  , [11, "fmt", "", "", 2, [
+  , [11, "fmt", "", "", 0, [
    [
     ["self"]
     , ["formatter"]
    ]
    , ["result"]
   ]]
-  , [11, "fmt", "portage_repo", "", 0, [
+  , [11, "fmt", "", "", 1, [
+   [
+    ["self"]
+    , ["formatter"]
+   ]
+   , ["result"]
+  ]]
+  , [11, "fmt", "portage_repo::file", "", 2, [
+   [
+    ["self"]
+    , ["formatter"]
+   ]
+   , ["result"]
+  ]]
+  , [11, "fmt", "portage_repo", "", 3, [
    [
     ["self"]
     , ["formatter"]
@@ -305,9 +371,10 @@ searchIndex["portage_repo"] = {
   ]]
  ]
  , "p": [
-  [3, "Repository"]
-  , [4, "ErrorSource"]
+  [4, "ErrorSource"]
   , [4, "ErrorKind"]
+  , [3, "RepoName"]
+  , [3, "Repository"]
  ]
 };
 searchIndex["repo_info"] = {

@@ -46,6 +46,10 @@
   <div class="sidebar-elems">
    <div class="block items">
     <a class="sidebar-title"
+         href="#variants">Variants</a>
+    <div class="sidebar-links">
+     <a href="#variant.RepoName">RepoName</a>
+    </div><a class="sidebar-title"
          href="#implementations">Trait Implementations</a>
     <div class="sidebar-links">
      <a href="#impl-Clone">Clone</a><a href="#impl-Copy">Copy</a><a href="#impl-Debug">Debug</a><a href="#impl-Display">Display</a>
@@ -102,15 +106,34 @@
   <h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs"
      href="javascript:void(0)"
      title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink'
-     href='../../src/portage_repo/err.rs.html#9'
+     href='../../src/portage_repo/err.rs.html#9-13'
      title='goto source code'>[src]</a></span><span class='in-band'>Enum <a href='../index.html'>portage_repo</a>::<wbr><a href='index.html'>err</a>::<wbr><a class="enum"
      href=''>ErrorSource</a></span></h1>
   <div class="docblock type-decl hidden-by-usual-hider">
    <pre class='rust enum'><span class="docblock attributes top-attr">#[non_exhaustive]
-</span>pub enum ErrorSource {}</pre>
+</span>pub enum ErrorSource {
+    RepoName(&amp;'static <a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>),
+}</pre>
   </div>
   <div class='docblock'>
    <p>Metadata about origin of an error</p>
+  </div>
+  <h2 id='variants'
+      class='variants small-section-header'>Variants (Non-exhaustive)<a href='#variants'
+     class='anchor'></a></h2>
+  <div class='docblock non-exhaustive non-exhaustive-enum'>
+   Non-exhaustive enums could have additional variants added in future. Therefore, when matching against variants of non-exhaustive enums, an extra wildcard arm must be added to account for any future variants.
+  </div><span id="variant.RepoName"
+           class="variant small-section-header"><a href="#variant.RepoName"
+     class="anchor field"></a><code id='RepoName.v'>RepoName(&amp;'static <a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,&nbsp;<a class="primitive"
+     href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span>
+  <div class='docblock'>
+   <p>An error returned by a RepoName file decoder</p>
   </div>
   <h2 id='implementations'
       class='small-section-header'>Trait Implementations<a href='#implementations'

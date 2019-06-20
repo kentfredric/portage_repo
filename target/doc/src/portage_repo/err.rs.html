@@ -90,23 +90,50 @@
 <span id="14">14</span>
 <span id="15">15</span>
 <span id="16">16</span>
+<span id="17">17</span>
+<span id="18">18</span>
+<span id="19">19</span>
+<span id="20">20</span>
+<span id="21">21</span>
+<span id="22">22</span>
+<span id="23">23</span>
+<span id="24">24</span>
+<span id="25">25</span>
+<span id="26">26</span>
+<span id="27">27</span>
+<span id="28">28</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
 <span class="doccomment">//! Various enums for representing Error states</span>
 
 <span class="kw">use</span> <span class="ident">display_attr</span>::<span class="ident">DisplayAttr</span>;
-<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">error</span>;
+<span class="kw">use</span> <span class="ident">std</span>::{<span class="ident">error</span>, <span class="ident">io</span>, <span class="ident">path</span>::<span class="ident">PathBuf</span>};
 
 <span class="doccomment">/// Metadata about origin of an error</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">DisplayAttr</span>, <span class="ident">Debug</span>, <span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;non_exhaustive&quot;</span>, <span class="ident">non_exhaustive</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ErrorSource</span> {}
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ErrorSource</span> {
+    <span class="doccomment">/// An error returned by a RepoName file decoder</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;via RepoName in {} @ l{}:c{}&quot;</span>, <span class="ident">_0</span>, <span class= 
+"ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">RepoName</span>(<span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">str</span>, <span class="ident">u32</span>, <span class="ident">u32</span>),
+}
 
 <span class="doccomment">/// Types of errors returned by this crate</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">DisplayAttr</span>, <span class="ident">Debug</span>, <span class="ident">Copy</span>, <span class="ident">Clone</span>)]</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">DisplayAttr</span>, <span class="ident">Debug</span>)]</span>
 <span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;non_exhaustive&quot;</span>, <span class="ident">non_exhaustive</span>)]</span>
-<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ErrorKind</span> {}
+<span class="kw">pub</span> <span class="kw">enum</span> <span class="ident">ErrorKind</span> {
+    <span class="doccomment">/// A specified path was not found on the filesystem</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Path {:?} not found: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
+"ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">PathNotFound</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
+
+    <span class="doccomment">/// An error occurred reading a file</span>
+    <span class="attribute">#[<span class="ident">display</span>(<span class="ident">fmt</span> <span class="op">=</span> <span class="string">&quot;Error reading {:?}: {} {}&quot;</span>, <span class="ident">_0</span>, <span class=
+"ident">_1</span>, <span class="ident">_2</span>)]</span>
+    <span class="ident">FileReadError</span>(<span class="ident">PathBuf</span>, <span class="ident">io</span>::<span class="ident">Error</span>, <span class="ident">ErrorSource</span>),
+}
 
 <span class="kw">impl</span> <span class="ident">error</span>::<span class="ident">Error</span> <span class="kw">for</span> <span class="ident">ErrorKind</span> {}
 </pre>

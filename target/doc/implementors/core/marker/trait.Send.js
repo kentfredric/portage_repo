@@ -12,6 +12,10 @@
   text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"enum\" href=\"portage_repo/err/enum.ErrorKind.html\" title=\"enum portage_repo::err::ErrorKind\">ErrorKind</a>"
   , synthetic: true
   , types: ["portage_repo::err::ErrorKind"]
+ }, {
+  text: "impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/marker/trait.Send.html\" title=\"trait core::marker::Send\">Send</a> for <a class=\"struct\" href=\"portage_repo/file/struct.RepoName.html\" title=\"struct portage_repo::file::RepoName\">RepoName</a>"
+  , synthetic: true
+  , types: ["portage_repo::file::RepoName"]
  }, ];
 
  if (window.register_implementors) {

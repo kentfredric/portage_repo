@@ -7,10 +7,10 @@
  <meta name="generator"
        content="rustdoc">
  <meta name="description"
-       content="Source to the Rust file `src/lib.rs`.">
+       content="Source to the Rust file `src/file.rs`.">
  <meta name="keywords"
        content="rust, rustlang, rust-lang">
- <title>lib.rs.html -- source</title>
+ <title>file.rs.html -- source</title>
  <link rel="stylesheet"
        type="text/css"
        href="../../normalize.css">
@@ -106,47 +106,59 @@
 <span id="30">30</span>
 <span id="31">31</span>
 <span id="32">32</span>
+<span id="33">33</span>
+<span id="34">34</span>
+<span id="35">35</span>
+<span id="36">36</span>
 </pre>
   <div class="example-wrap">
    <pre class="rust ">
-<span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;external_doc&quot;</span>, <span class="ident">feature</span>(<span class=
-"ident">external_doc</span>))]</span>
-<span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;non_exhaustive&quot;</span>, <span class="ident">feature</span>(<span class=
-"ident">non_exhaustive</span>))]</span>
-<span class="attribute">#![<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;external_doc&quot;</span>, <span class="ident">doc</span>(<span class=
-"ident">include</span> <span class="op">=</span> <span class="string">&quot;lib.md&quot;</span>))]</span>
-<span class="attribute">#![<span class="ident">cfg_attr</span>(
-    <span class="ident">not</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;external_doc&quot;</span>),
-    <span class="ident">doc</span> <span class="op">=</span> <span class="string">&quot;A low-level interface for working with Gentoo portage \
-           repositories.&quot;</span>
-)]</span>
-<span class="kw">use</span> <span class="ident">std</span>::<span class="ident">path</span>::<span class="ident">PathBuf</span>;
+<span class="doccomment">//! Utilities for decoding various portage file formats</span>
 
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">err</span>;
-<span class="kw">pub</span> <span class="kw">mod</span> <span class="ident">file</span>;
+<span class="kw">use</span> <span class="kw">crate</span>::<span class="ident">err</span>::<span class="ident">ErrorKind</span>;
+<span class="kw">use</span> <span class="ident">std</span>::{<span class="ident">fs</span>, <span class="ident">io</span>, <span class="ident">path</span>::<span class="ident">PathBuf</span>};
 
-<span class="doccomment">/// Represents a gentoo repository</span>
-<span class="attribute">#[<span class="ident">cfg_attr</span>(<span class="ident">feature</span> <span class="op">=</span> <span class="string">&quot;external_doc&quot;</span>, <span class="ident">doc</span>(<span class=
-"ident">include</span> <span class="op">=</span> <span class="string">&quot;struct.Repository.md&quot;</span>))]</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>, <span class="ident">Eq</span>, <span class="ident">PartialEq</span>, <span class=
-"ident">Ord</span>, <span class="ident">PartialOrd</span>, <span class="ident">Hash</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">Repository</span> {
-    <span class="ident">root</span>: <span class="ident">PathBuf</span>,
+<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">err</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">i</span>:<span class="ident">ident</span> <span class="op">=&gt;</span> <span class="macro-nonterminal">$</span><span class=
+"macro-nonterminal">j</span>:<span class="ident">ident</span> <span class="op">=&gt;</span> $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">x</span>:<span class="ident">expr</span>),<span class=
+"kw-2">*</span>) <span class="op">=&gt;</span> {
+        <span class="macro-nonterminal">$</span><span class="kw">crate</span>::<span class="macro-nonterminal">err</span>::<span class="ident">ErrorKind</span>::<span class="macro-nonterminal">$</span><span class=
+"macro-nonterminal">j</span>($(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">x</span>),<span class="kw-2">*</span>, <span class="macro-nonterminal">$</span><span class="kw">crate</span>::<span class= 
+"macro-nonterminal">err</span>::<span class="ident">ErrorSource</span>::<span class="macro-nonterminal">$</span><span class="macro-nonterminal">i</span>(<span class="macro">file</span><span class="macro">!</span>(), <span class=
+"macro">line</span><span class="macro">!</span>(), <span class="macro">column</span><span class="macro">!</span>()))
+    };
 }
 
-<span class="kw">impl</span> <span class="ident">Repository</span> {
-    <span class="doccomment">/// Construct a new Repository trait object</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span>(<span class="ident">root</span>: <span class=
+<span class="doccomment">/// Decode `${repo}/profiles/repo_name`</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Debug</span>, <span class="ident">Clone</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">RepoName</span> {
+    <span class="ident">path</span>: <span class="ident">PathBuf</span>,
+}
+
+<span class="kw">impl</span> <span class="ident">RepoName</span> {
+    <span class="doccomment">/// Create a `repo_name` file decoder for the given file `path`</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span><span class="op">&lt;</span><span class="ident">P</span><span class="op">&gt;</span>(<span class="ident">path</span>: <span class=
 "ident">P</span>) <span class="op">-&gt;</span> <span class="self">Self</span>
     <span class="kw">where</span>
         <span class="ident">P</span>: <span class="ident">Into</span><span class="op">&lt;</span><span class="ident">PathBuf</span><span class="op">&gt;</span>,
     {
-        <span class="self">Self</span> { <span class="ident">root</span>: <span class="ident">root</span>.<span class="ident">into</span>() }
+        <span class="self">Self</span> { <span class="ident">path</span>: <span class="ident">path</span>.<span class="ident">into</span>() }
     }
 
-    <span class="doccomment">/// Returns the path to this repository</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">path</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">PathBuf</span> { <span class=
-"self">self</span>.<span class="ident">root</span>.<span class="ident">to_owned</span>() }
+    <span class="doccomment">/// Obtain the name of the repo from the file</span>
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">get</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class=
+"op">&lt;</span><span class="ident">String</span>, <span class="ident">ErrorKind</span><span class="op">&gt;</span> {
+        <span class="ident">fs</span>::<span class="ident">read_to_string</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">path</span>)
+            .<span class="ident">map_err</span>(<span class="op">|</span><span class="ident">e</span><span class="op">|</span> <span class="kw">match</span> <span class="ident">e</span>.<span class="ident">kind</span>() {
+                <span class="ident">io</span>::<span class="ident">ErrorKind</span>::<span class="ident">NotFound</span> <span class="op">=&gt;</span> <span class="macro">err</span><span class="macro">!</span>( <span class=
+"ident">RepoName</span> <span class="op">=&gt;</span> <span class="ident">PathNotFound</span> <span class="op">=&gt;</span> <span class="self">self</span>.<span class="ident">path</span>.<span class="ident">to_owned</span>(), <span class= 
+"ident">e</span> ),
+                <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">err</span><span class="macro">!</span>( <span class="ident">RepoName</span> <span class="op">=&gt;</span> <span class=
+"ident">FileReadError</span> <span class="op">=&gt;</span> <span class="self">self</span>.<span class="ident">path</span>.<span class="ident">to_owned</span>(), <span class="ident">e</span> )
+            })
+            .<span class="ident">map</span>(<span class="op">|</span><span class="ident">content</span><span class="op">|</span> <span class="ident">content</span>.<span class="ident">trim_end</span>().<span class=
+"ident">to_owned</span>())
+    }
 }
 </pre>
   </div>
